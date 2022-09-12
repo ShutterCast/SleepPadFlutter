@@ -2,9 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sleep_pad/screens/intro_screen1.dart';
 import 'package:sleep_pad/screens/splash_screen.dart';
+import 'package:sleep_pad/screens/splash_screen_home.dart';
 
+import 'Utils.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -20,6 +21,8 @@ Future<void> main() async {
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 }
 
+final navigatorKey = GlobalKey<NavigatorState>();
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -27,6 +30,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      navigatorKey: navigatorKey,
+      scaffoldMessengerKey: Utils.messengerKey,
       title: 'Sleep Pad',
       theme: ThemeData(
         primarySwatch: Colors.purple,
@@ -41,7 +46,7 @@ class MyApp extends StatelessWidget {
           } else if (snapshot.hasError) {
             return const Center(child: Text('Something Went Wrong'));
           } else if (snapshot.hasData) {
-            return IntroScreen1();
+            return SplashScreenHome();
           } else {
             return SplashScreen();
           }

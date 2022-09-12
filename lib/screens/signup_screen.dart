@@ -1,8 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 
+import '../Utils.dart';
 import '../widgets/custom_text_field.dart';
+import 'otp_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -15,6 +18,45 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
   TextEditingController phoneNumberController = TextEditingController();
+
+  void sendOTP() async {
+    if (phoneNumberController.text.trim() != "" &&
+        firstNameController.text.trim() != "" &&
+        lastNameController.text.trim() != "") {
+      String phone = "+91${phoneNumberController.text.trim()}";
+
+      showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => const Center(
+                child: CircularProgressIndicator(),
+              ));
+
+      await FirebaseAuth.instance.verifyPhoneNumber(
+          phoneNumber: phone,
+          verificationCompleted: (credential) {},
+          verificationFailed: (ex) {
+            Utils.showSnackBar(color: false, text: "Error");
+          },
+          codeSent: (verificationId, resendToken) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => OtpScreen(
+                        isSignUp: true,
+                        phoneNumber: phone,
+                        verificationId: verificationId,
+                        firstName: firstNameController.text.trim(),
+                        lastName: lastNameController.text.trim(),
+                      )),
+            );
+          },
+          codeAutoRetrievalTimeout: (verificationId) {},
+          timeout: const Duration(seconds: 60));
+    } else {
+      Utils.showSnackBar(color: false, text: "Fill all Fields");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +104,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       height: MediaQuery.of(context).size.height * 0.065,
                       width: double.maxFinite,
                       roundSize: 0,
-                      onPressed: () {},
+                      onPressed: () {
+                        sendOTP();
+                      },
                       title: "Continue",
                       fontSize: 18,
                       fontWeight: FontWeight.w400,

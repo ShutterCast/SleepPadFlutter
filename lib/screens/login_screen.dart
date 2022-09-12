@@ -1,7 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../Utils.dart';
 import '../widgets/custom_text_field.dart';
 import '../widgets/my_button.dart';
+import 'otp_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -12,6 +15,41 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController phoneNumberController = TextEditingController();
+
+  void sendOTP() async {
+    if (phoneNumberController.text.trim() != "") {
+      String phone = "+91${phoneNumberController.text.trim()}";
+
+      showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => const Center(
+                child: CircularProgressIndicator(),
+              ));
+
+      await FirebaseAuth.instance.verifyPhoneNumber(
+          phoneNumber: phone,
+          verificationCompleted: (credential) {},
+          verificationFailed: (ex) {
+            Utils.showSnackBar(color: false, text: "Error");
+          },
+          codeSent: (verificationId, resendToken) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => OtpScreen(
+                        isSignUp: false,
+                        phoneNumber: phone,
+                        verificationId: verificationId,
+                      )),
+            );
+          },
+          codeAutoRetrievalTimeout: (verificationId) {},
+          timeout: const Duration(seconds: 60));
+    } else {
+      Utils.showSnackBar(color: false, text: "Error");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +82,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: MediaQuery.of(context).size.height * 0.065,
                         width: double.maxFinite,
                         roundSize: 0,
-                        onPressed: () {},
+                        onPressed: () {
+                          if (phoneNumberController.text.trim() != "") {
+                            sendOTP();
+                          } else {
+                            Utils.showSnackBar(
+                                text: "Enter Phone Number", color: false);
+                          }
+                        },
                         title: "Continue",
                         fontSize: 18,
                         fontWeight: FontWeight.w400,

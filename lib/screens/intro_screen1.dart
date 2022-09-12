@@ -48,7 +48,10 @@ class _IntroScreen1State extends State<IntroScreen1> {
                 ),
                 MyButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => IntroScreen2()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => IntroScreen2()));
                   },
                   title: "Next",
                   color: Colors.indigo,

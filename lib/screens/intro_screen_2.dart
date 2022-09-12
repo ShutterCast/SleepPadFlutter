@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:sleep_pad/screens/splash_screen.dart';
 import 'package:sleep_pad/screens/video_player_screen.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
@@ -24,6 +26,10 @@ class _IntroScreen2State extends State<IntroScreen2> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  // MyText(
+                  //     text: FirebaseAuth.instance.currentUser!.displayName
+                  //         .toString(),
+                  //     color: Colors.green),
                   MyText(
                     textAlign: TextAlign.center,
                     text:
@@ -55,7 +61,14 @@ class _IntroScreen2State extends State<IntroScreen2> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       MyButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          await FirebaseAuth.instance.signOut();
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SplashScreen()),
+                              (route) => false);
+                        },
                         title: "Pre-Order Now",
                         color: Colors.indigo,
                         height: MediaQuery.of(context).size.height * 0.062,
