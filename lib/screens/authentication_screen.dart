@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sleep_pad/screens/login_screen.dart';
-import 'package:sleep_pad/screens/sign_up_screen.dart';
+import 'package:sleep_pad/screens/signup_screen.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
 class AuthenticationScreen extends StatefulWidget {
@@ -46,8 +46,8 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
         ),
         body: TabBarView(
           children: [
-            LoginScreen(),
             SignUpScreen(),
+            LoginScreen(),
           ],
         ),
         drawer: Drawer(),

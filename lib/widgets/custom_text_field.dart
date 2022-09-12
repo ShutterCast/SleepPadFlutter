@@ -8,6 +8,8 @@ class CustomTextField extends StatelessWidget {
   final Icon? icon;
   final Widget? suffixicon;
   final int? maxLines;
+  final int? maxLength;
+
   final FormFieldValidator<String?>? validator;
   final TextInputAction? textInputAction;
   const CustomTextField({
@@ -21,6 +23,7 @@ class CustomTextField extends StatelessWidget {
     this.validator,
     this.maxLines,
     this.textInputAction,
+    this.maxLength,
   }) : super(key: key);
 
   @override
@@ -30,6 +33,7 @@ class CustomTextField extends StatelessWidget {
     );
 
     return TextFormField(
+      maxLength: maxLength,
       maxLines: maxLines ?? 1,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: validator,

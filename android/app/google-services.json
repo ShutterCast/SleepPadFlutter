@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "691540735642",
+    "project_id": "sleep-pad-7a310",
+    "storage_bucket": "sleep-pad-7a310.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691540735642:android:3e935522451acd73ad9123",
+        "android_client_info": {
+          "package_name": "com.sleepkraft.sleep_pad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691540735642-luc3geq3ubbslh4qph6qgcjif73g4c19.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAa-rbG2E-aKv0-LeqS6kfGjGj9h0sWh9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691540735642-luc3geq3ubbslh4qph6qgcjif73g4c19.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
