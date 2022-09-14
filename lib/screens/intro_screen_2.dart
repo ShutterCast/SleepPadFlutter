@@ -26,10 +26,6 @@ class _IntroScreen2State extends State<IntroScreen2> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  // MyText(
-                  //     text: FirebaseAuth.instance.currentUser!.displayName
-                  //         .toString(),
-                  //     color: Colors.green),
                   MyText(
                     textAlign: TextAlign.center,
                     text:
@@ -39,23 +35,11 @@ class _IntroScreen2State extends State<IntroScreen2> {
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),
-                  Column(
-                    children: [
-                      MyText(
-                        textAlign: TextAlign.center,
-                        text: "SLEEP PAD",
-                        color: Colors.purple,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 50,
-                      ),
-                      MyText(
-                        textAlign: TextAlign.center,
-                        text: "Crafted by SleepKraft",
-                        color: Colors.indigo,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      ),
-                    ],
+                  Image.asset(
+                    "assets/sleeppad-logo.png",
+                    height: MediaQuery.of(context).size.height * 0.2,
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    fit: BoxFit.fitWidth,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -46,21 +46,12 @@ class _SplashScreenHomeState extends State<SplashScreenHome> {
         child: Stack(
           children: [
             Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  MyText(
-                    text: "SLEEP PAD",
-                    fontSize: 50,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  MyText(
-                    text: "Crafted by Sleepkraft",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 0.6,
-                  ),
-                ],
+              child: Image.asset(
+                "assets/white-logo.png",
+                // color: Colors.white,
+                fit: BoxFit.fitWidth,
+                height: MediaQuery.of(context).size.height * 0.2,
+                width: MediaQuery.of(context).size.width * 0.8,
               ),
             ),
             Align(

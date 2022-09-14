@@ -5,6 +5,7 @@ import 'package:sleep_pad/widgets/my_button.dart';
 
 import '../Utils.dart';
 import '../widgets/custom_text_field.dart';
+import 'authentication_screen.dart';
 import 'otp_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -37,6 +38,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
           verificationCompleted: (credential) {},
           verificationFailed: (ex) {
             Utils.showSnackBar(color: false, text: "Error");
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AuthenticationScreen(),
+              ),
+            );
           },
           codeSent: (verificationId, resendToken) {
             Navigator.push(

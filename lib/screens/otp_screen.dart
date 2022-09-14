@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_field.dart';
@@ -35,7 +37,7 @@ class _OtpScreenState extends State<OtpScreen> {
   signInWithNumber() async {
     showDialog(
         context: context,
-        barrierDismissible: false,
+        barrierDismissible: true,
         builder: (context) => const Center(
               child: CircularProgressIndicator(),
             ));
@@ -52,6 +54,14 @@ class _OtpScreenState extends State<OtpScreen> {
                   {
                     FirebaseAuth.instance.currentUser!.updateDisplayName(
                         widget.firstName! + widget.lastName!),
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const IntroScreen1()),
+                        (route) => false),
+                  }
+                else
+                  {
                     Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
@@ -121,8 +131,13 @@ class _OtpScreenState extends State<OtpScreen> {
   }
 
   errorThrown(Object error) {
-    setState(() {
-      Utils.showSnackBar(text: error.toString(), color: false);
-    });
+    log(error.toString());
+    Utils.showSnackBar(text: "Invalid OTP", color: false);
+
+    // Navigator.pushAndRemoveUntil(
+    //     context,
+    //     MaterialPageRoute(
+    //         builder: (context) => const AuthenticationScreen()),
+    //         (route) => false);
   }
 }

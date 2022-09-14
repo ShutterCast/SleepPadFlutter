@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:sleep_pad/screens/authentication_screen.dart';
 
 import '../Utils.dart';
 import '../widgets/custom_text_field.dart';
@@ -32,6 +33,12 @@ class _LoginScreenState extends State<LoginScreen> {
           verificationCompleted: (credential) {},
           verificationFailed: (ex) {
             Utils.showSnackBar(color: false, text: "Error");
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AuthenticationScreen(),
+              ),
+            );
           },
           codeSent: (verificationId, resendToken) {
             Navigator.push(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sleep_pad/screens/intro_screen_2.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
@@ -40,8 +41,8 @@ class _IntroScreen1State extends State<IntroScreen1> {
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
-                Image.network(
-                  "https://img.freepik.com/free-vector/flat-person-sleeping-night-bed-background_52683-9246.jpg?w=740&t=st=1662971221~exp=1662971821~hmac=406527b2681c584c3872846eff07cab855597c9c946778c00c143ac773f6e62e",
+                SvgPicture.asset(
+                  "assets/double-bed-image.svg",
                   height: MediaQuery.of(context).size.height * 0.5,
                   width: double.maxFinite,
                   fit: BoxFit.cover,
