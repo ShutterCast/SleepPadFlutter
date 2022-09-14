@@ -46,6 +46,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             );
           },
           codeSent: (verificationId, resendToken) {
+            Navigator.pop(context);
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -63,6 +64,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     } else {
       Utils.showSnackBar(color: false, text: "Fill all Fields");
     }
+    phoneNumberController.clear();
   }
 
   @override

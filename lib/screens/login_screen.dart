@@ -18,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController phoneNumberController = TextEditingController();
 
   void sendOTP() async {
-    if (phoneNumberController.text.trim() != "") {
+    if (phoneNumberController.text.trim().length == 10) {
       String phone = "+91${phoneNumberController.text.trim()}";
 
       showDialog(
@@ -41,6 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
             );
           },
           codeSent: (verificationId, resendToken) {
+            Navigator.pop(context);
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -53,8 +54,9 @@ class _LoginScreenState extends State<LoginScreen> {
           },
           codeAutoRetrievalTimeout: (verificationId) {},
           timeout: const Duration(seconds: 60));
+      phoneNumberController.clear();
     } else {
-      Utils.showSnackBar(color: false, text: "Error");
+      Utils.showSnackBar(color: false, text: "Enter Correct Number");
     }
   }
 

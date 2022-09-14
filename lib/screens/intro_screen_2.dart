@@ -1,9 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:sleep_pad/screens/splash_screen.dart';
 import 'package:sleep_pad/screens/video_player_screen.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class IntroScreen2 extends StatefulWidget {
   const IntroScreen2({Key? key}) : super(key: key);
@@ -13,6 +12,8 @@ class IntroScreen2 extends StatefulWidget {
 }
 
 class _IntroScreen2State extends State<IntroScreen2> {
+  final url = Uri.parse("http://www.sleeppad.in/order-now");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,12 +47,11 @@ class _IntroScreen2State extends State<IntroScreen2> {
                     children: [
                       MyButton(
                         onPressed: () async {
-                          await FirebaseAuth.instance.signOut();
-                          Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const SplashScreen()),
-                              (route) => false);
+                          if (await canLaunchUrl(url)) {
+                            await launchUrl(url);
+                          } else {
+                            throw "Could not launch $url";
+                          }
                         },
                         title: "Pre-Order Now",
                         color: Colors.indigo,

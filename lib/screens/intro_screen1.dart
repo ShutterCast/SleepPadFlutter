@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sleep_pad/screens/intro_screen_2.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
@@ -41,8 +40,8 @@ class _IntroScreen1State extends State<IntroScreen1> {
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
-                SvgPicture.asset(
-                  "assets/double-bed-image.svg",
+                Image.asset(
+                  "assets/Bed.png",
                   height: MediaQuery.of(context).size.height * 0.5,
                   width: double.maxFinite,
                   fit: BoxFit.cover,
