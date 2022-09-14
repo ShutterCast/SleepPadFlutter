@@ -48,6 +48,7 @@ class CustomTextField extends StatelessWidget {
         focusedBorder: inputBorder,
         enabledBorder: inputBorder,
         filled: true,
+        counterText: "",
         contentPadding: const EdgeInsets.all(8),
       ),
       keyboardType: textInputType,

@@ -5,7 +5,6 @@ import 'package:sleep_pad/widgets/my_button.dart';
 
 import '../Utils.dart';
 import '../widgets/custom_text_field.dart';
-import 'authentication_screen.dart';
 import 'otp_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -21,7 +20,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController phoneNumberController = TextEditingController();
 
   void sendOTP() async {
-    if (phoneNumberController.text.trim() != "" &&
+    if (phoneNumberController.text.trim().length == 10 &&
         firstNameController.text.trim() != "" &&
         lastNameController.text.trim() != "") {
       String phone = "+91${phoneNumberController.text.trim()}";
@@ -37,13 +36,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
           phoneNumber: phone,
           verificationCompleted: (credential) {},
           verificationFailed: (ex) {
+            Navigator.pop(context);
+
             Utils.showSnackBar(color: false, text: "Error");
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => AuthenticationScreen(),
-              ),
-            );
+            // Navigator.pushReplacement(
+            //   context,
+            //   MaterialPageRoute(
+            //     builder: (context) => AuthenticationScreen(),
+            //   ),
+            // );
           },
           codeSent: (verificationId, resendToken) {
             Navigator.pop(context);
