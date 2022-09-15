@@ -71,7 +71,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             );
           },
           codeAutoRetrievalTimeout: (verificationId) {
-            if (mounted) return;
+            if (!mounted) return;
             setState(() {
               isLoading = false;
             });
