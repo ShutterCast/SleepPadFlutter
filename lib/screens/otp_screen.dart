@@ -6,6 +6,7 @@ import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_field_style.dart';
 import 'package:otp_text_field/style.dart';
 import 'package:sleep_pad/screens/intro_screen1.dart';
+import 'package:sleep_pad/screens/profile_additional_screen.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
 import '../Utils.dart';
@@ -58,7 +59,8 @@ class _OtpScreenState extends State<OtpScreen> {
                     Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const IntroScreen1()),
+                          builder: (context) => ProfileScreen(),
+                        ),
                         (route) => false),
                   }
                 else

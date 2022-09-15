@@ -35,6 +35,7 @@ class CustomTextField extends StatelessWidget {
     return TextFormField(
       maxLength: maxLength,
       maxLines: maxLines ?? 1,
+      cursorColor: Colors.purple,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: validator,
       controller: textEditingController,
