@@ -110,7 +110,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       color: Colors.black87,
                     ),
                     MyText(
-                      text: "+ ${widget.phoneNumber}",
+                      text: "${widget.phoneNumber}",
                       fontWeight: FontWeight.bold,
                       fontSize: 14,
                       color: Colors.black87,
@@ -148,7 +148,9 @@ class _OtpScreenState extends State<OtpScreen> {
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.030),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
                   child: const Text(
                     "Resend OTP?",
                     style: TextStyle(

@@ -58,12 +58,13 @@ class _SignInScreenState extends State<SignInScreen> {
             );
           },
           codeAutoRetrievalTimeout: (verificationId) {
+            if (mounted) return;
             setState(() {
               isLoading = false;
             });
             Utils.showSnackBar(color: false, text: "Timeout");
           },
-          timeout: const Duration(seconds: 60));
+          timeout: const Duration(seconds: 30));
 
       phoneNumberController.clear();
     } else {

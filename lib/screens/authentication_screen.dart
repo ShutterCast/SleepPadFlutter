@@ -16,42 +16,52 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.purple,
-          title: MyText(
-            text: "Welcome",
-            fontSize: 18,
-          ),
-          bottom: TabBar(
-            physics: BouncingScrollPhysics(
-              parent: AlwaysScrollableScrollPhysics(),
+          appBar: AppBar(
+            leading: const Icon(Icons.menu),
+            elevation: 0,
+            backgroundColor: Colors.purple,
+            title: MyText(
+              text: "Welcome",
+              fontSize: 18,
             ),
-            indicatorColor: Colors.white,
-            labelColor: Colors.white,
-            // indicatorSize: TabBarIndicatorSize.tab,
-            // indicator: BoxDecoration(
-            //   color: Colors.amber,
-            // ),
-            unselectedLabelColor: Colors.white.withOpacity(0.8),
-            labelStyle: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                letterSpacing: 0.6),
-            tabs: const [
-              Tab(text: "SIGN UP"),
-              Tab(text: "SIGN IN"),
-            ],
           ),
-        ),
-        body: TabBarView(
-          children: [
-            SignUpScreen(),
-            SignInScreen(),
-          ],
-        ),
-        drawer: Drawer(),
-      ),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                color: Colors.amber,
+                child: TabBar(
+                  physics: BouncingScrollPhysics(
+                    parent: AlwaysScrollableScrollPhysics(),
+                  ),
+                  indicatorColor: Colors.white,
+                  labelColor: Colors.white,
+                  // indicatorSize: TabBarIndicatorSize.tab,
+                  // indicator: BoxDecoration(
+                  //   color: Colors.amber,
+                  // ),
+                  unselectedLabelColor: Colors.white.withOpacity(0.8),
+                  labelStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 0.6),
+                  tabs: const [
+                    Tab(text: "SIGN UP"),
+                    Tab(text: "SIGN IN"),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    SignUpScreen(),
+                    SignInScreen(),
+                  ],
+                ),
+              ),
+            ],
+          )),
     );
   }
 }
