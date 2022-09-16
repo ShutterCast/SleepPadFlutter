@@ -25,19 +25,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
   TextEditingController heightController = TextEditingController();
   TextEditingController weightController = TextEditingController();
 
-  @override
-  void initState() {
-    super.initState();
-
-    setState(() {
-      if (FirebaseAuth.instance.currentUser?.displayName! != "") {
-        name = "";
-      } else {
-        name = FirebaseAuth.instance.currentUser!.displayName!;
-        log(name);
-      }
-    });
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //
+  //   setState(() {
+  //     if (FirebaseAuth.instance.currentUser?.displayName! != "") {
+  //       name = "";
+  //     } else {
+  //       name = FirebaseAuth.instance.currentUser!.displayName!;
+  //       log(name);
+  //     }
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         elevation: 0,
         title: MyText(
-          text: "Nice to meet you,",
+          text: "Nice to meet you, $name",
           fontSize: 18,
         ),
       ),
