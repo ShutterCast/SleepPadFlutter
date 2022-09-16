@@ -96,7 +96,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       textEditingController: weightController,
                       textInputType: TextInputType.phone,
                       textInputAction: TextInputAction.next,
-                      hintText: "cms")
+                      hintText: "kgs")
                 ],
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.06),

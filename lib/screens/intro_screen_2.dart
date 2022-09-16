@@ -12,7 +12,7 @@ class IntroScreen2 extends StatefulWidget {
 }
 
 class _IntroScreen2State extends State<IntroScreen2> {
-  final url = Uri.parse("http://www.sleeppad.in/order-now");
+  final url = Uri.parse("http://www.sleeppad.in/shop");
 
   @override
   Widget build(BuildContext context) {
