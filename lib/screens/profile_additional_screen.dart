@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sleep_pad/screens/intro_screen1.dart';
 import 'package:sleep_pad/screens/splash_screen_home.dart';
 import 'package:sleep_pad/widgets/custom_text_field.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
@@ -20,7 +21,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  String? name = "";
+  String name = "";
   TextEditingController heightController = TextEditingController();
   TextEditingController weightController = TextEditingController();
 
@@ -29,7 +30,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
     super.initState();
 
     setState(() {
-      name = FirebaseAuth.instance.currentUser!.displayName;
+      if (FirebaseAuth.instance.currentUser?.displayName! != "") {
+        name = "";
+      } else {
+        name = FirebaseAuth.instance.currentUser!.displayName!;
+        log(name);
+      }
     });
   }
 
@@ -39,7 +45,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         elevation: 0,
         title: MyText(
-          text: "Nice to meet you, $name",
+          text: "Nice to meet you,",
           fontSize: 18,
         ),
       ),
@@ -126,7 +132,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const SplashScreenHome(),
+                        builder: (context) => const IntroScreen1(),
                       ),
                     );
                   } else {

@@ -21,7 +21,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   }
 
   loadVideoPlayer() {
-    controller = VideoPlayerController.asset('assets/video.mp4');
+    controller = VideoPlayerController.asset('assets/sleeppad-video.mp4');
     controller.addListener(() {
       setState(() {});
     });
@@ -48,43 +48,38 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
             //   child: Text(
             //       "Total Duration: " + controller.value.duration.toString()),
             // ),
-            Container(
-              child: VideoProgressIndicator(
-                controller,
-                allowScrubbing: true,
-                colors: VideoProgressColors(
-                  backgroundColor: Colors.redAccent,
-                  playedColor: Colors.green,
-                  bufferedColor: Colors.purple,
-                ),
+            VideoProgressIndicator(
+              controller,
+              allowScrubbing: true,
+              colors: const VideoProgressColors(
+                backgroundColor: Colors.redAccent,
+                playedColor: Colors.green,
+                bufferedColor: Colors.purple,
               ),
             ),
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                      onPressed: () {
-                        if (controller.value.isPlaying) {
-                          controller.pause();
-                        } else {
-                          controller.play();
-                        }
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                    onPressed: () {
+                      if (controller.value.isPlaying) {
+                        controller.pause();
+                      } else {
+                        controller.play();
+                      }
+                      setState(() {});
+                    },
+                    icon: Icon(controller.value.isPlaying
+                        ? Icons.pause
+                        : Icons.play_arrow)),
+                IconButton(
+                    onPressed: () {
+                      controller.seekTo(Duration(seconds: 0));
 
-                        setState(() {});
-                      },
-                      icon: Icon(controller.value.isPlaying
-                          ? Icons.pause
-                          : Icons.play_arrow)),
-                  IconButton(
-                      onPressed: () {
-                        controller.seekTo(Duration(seconds: 0));
-
-                        setState(() {});
-                      },
-                      icon: Icon(Icons.stop))
-                ],
-              ),
+                      setState(() {});
+                    },
+                    icon: Icon(Icons.stop))
+              ],
             )
           ],
         ),
