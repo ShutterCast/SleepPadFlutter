@@ -41,7 +41,7 @@ class _SignInScreenState extends State<SignInScreen> {
               isLoading = false;
             });
 
-            Utils.showSnackBar(color: false, text: "Error");
+            Utils.showSnackBar(color: false, text: "Error ${ex.message}");
           },
           codeSent: (verificationId, resendToken) {
             setState(() {

@@ -45,7 +45,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               isLoading = false;
             });
 
-            Utils.showSnackBar(color: false, text: "Error");
+            Utils.showSnackBar(color: false, text: "Error ${ex.message}");
             // Navigator.pushReplacement(
             //   context,
             //   MaterialPageRoute(
