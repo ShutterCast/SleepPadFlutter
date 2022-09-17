@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sleep_pad/charts/dashboard_screen.dart';
 import 'package:sleep_pad/screens/video_player_screen.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
@@ -42,31 +43,54 @@ class _IntroScreen2State extends State<IntroScreen2> {
                     width: MediaQuery.of(context).size.width * 0.8,
                     fit: BoxFit.fitWidth,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  Column(
                     children: [
-                      MyButton(
-                        onPressed: () async {
-                          if (await canLaunchUrl(url)) {
-                            await launchUrl(url);
-                          } else {
-                            throw "Could not launch $url";
-                          }
-                        },
-                        title: "Pre-Order Now",
-                        color: Colors.indigo,
-                        height: MediaQuery.of(context).size.height * 0.062,
-                        width: MediaQuery.of(context).size.width * 0.40,
-                        roundSize: 0,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w400,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          MyButton(
+                            onPressed: () async {
+                              if (await canLaunchUrl(url)) {
+                                await launchUrl(url);
+                              } else {
+                                throw "Could not launch $url";
+                              }
+                            },
+                            title: "Pre-Order Now",
+                            color: Colors.indigo,
+                            height: MediaQuery.of(context).size.height * 0.062,
+                            width: MediaQuery.of(context).size.width * 0.40,
+                            roundSize: 0,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          MyButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          VideoPlayerScreen()));
+                            },
+                            title: "Watch Video",
+                            color: Colors.indigo,
+                            height: MediaQuery.of(context).size.height * 0.062,
+                            width: MediaQuery.of(context).size.width * 0.40,
+                            roundSize: 0,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
                       ),
                       MyButton(
                         onPressed: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => VideoPlayerScreen()));
+                                  builder: (context) => DashBoardScreen()));
                         },
                         title: "Watch Demo",
                         color: Colors.indigo,
