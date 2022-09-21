@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sleep_pad/screens/intro_screen_2.dart';
@@ -27,7 +25,6 @@ class _IntroScreen1State extends State<IntroScreen1> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     localHeight = getHeight(prefs);
     setState(() {});
-    log(localHeight);
   }
 
   @override

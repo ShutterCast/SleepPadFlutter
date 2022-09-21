@@ -9,63 +9,55 @@ class LineChartWidget extends StatefulWidget {
 }
 
 class _LineChartWidgetState extends State<LineChartWidget> {
-  late List<SalesData> _chartData;
-  late TooltipBehavior _tooltipBehavior;
-
   @override
   void initState() {
-    _chartData = getChartData();
-    _tooltipBehavior = TooltipBehavior(enable: true);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-            body: SfCartesianChart(
-      title: ChartTitle(text: 'Yearly sales analysis'),
-      legend: Legend(isVisible: true),
-      tooltipBehavior: _tooltipBehavior,
-      series: <SplineSeries>[
-        SplineSeries<SalesData, double>(
-            name: '',
-            dataSource: _chartData,
-            xValueMapper: (SalesData sales, _) => sales.year,
-            yValueMapper: (SalesData sales, _) => sales.sales,
-            dataLabelSettings: DataLabelSettings(
-              isVisible: false,
-            ),
-            enableTooltip: true,
-            width: 4,
-            opacity: 1,
-            dashArray: <double>[0, 0],
-            splineType: SplineType.monotonic,
-            cardinalSplineTension: 0.9)
-      ],
-      primaryXAxis: NumericAxis(
-        edgeLabelPlacement: EdgeLabelPlacement.shift,
-      ),
-      primaryYAxis: NumericAxis(
-        labelFormat: '{value}M',
-      ),
-    )));
-  }
-
-  List<SalesData> getChartData() {
-    final List<SalesData> chartData = [
-      SalesData(2017, 25),
-      SalesData(2018, 12),
-      SalesData(2019, 24),
-      SalesData(2020, 18),
-      SalesData(2021, 30)
+    final List<ChartData> chartData = [
+      ChartData("Mon", 15),
+      ChartData("Tue", 28),
+      ChartData("Wed", 34),
+      ChartData("Thu", 20),
+      ChartData("Fri", 40),
+      ChartData("Sat", 40),
     ];
-    return chartData;
+
+    return SfCartesianChart(
+      enableAxisAnimation: true,
+      primaryXAxis: CategoryAxis(
+        majorGridLines: const MajorGridLines(width: 0),
+        axisLine: const AxisLine(width: 0),
+      ),
+      selectionType: SelectionType.point,
+      primaryYAxis: NumericAxis(
+        isVisible: false,
+      ),
+      series: <ChartSeries>[
+        SplineSeries<ChartData, String>(
+          enableTooltip: true,
+          width: 1,
+          markerSettings: const MarkerSettings(
+            isVisible: true,
+            color: Colors.blue,
+            shape: DataMarkerType.circle,
+          ),
+          dataSource: chartData,
+          xValueMapper: (ChartData data, _) => data.x,
+          yValueMapper: (ChartData data, _) => data.y,
+        ),
+      ],
+      backgroundColor: Colors.transparent,
+      borderWidth: 0,
+      plotAreaBorderWidth: 0,
+    );
   }
 }
 
-class SalesData {
-  SalesData(this.year, this.sales);
-  final double year;
-  final double sales;
+class ChartData {
+  ChartData(this.x, this.y);
+  final String x;
+  final double y;
 }

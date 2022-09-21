@@ -1,7 +1,7 @@
-import 'package:d_chart/d_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:sleep_pad/charts/bar_chart.dart';
 import 'package:sleep_pad/charts/calender_screen.dart';
+import 'package:sleep_pad/charts/line_chart_widget.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
@@ -104,27 +104,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.3,
-                child: DChartLine(
-                  animate: true,
-                  data: const [
-                    {
-                      'id': 'Line',
-                      'data': [
-                        {'domain': 0, 'measure': 1},
-                        {'domain': 1, 'measure': 1.2},
-                        {'domain': 2, 'measure': 2},
-                        {'domain': 3, 'measure': 3},
-                        {'domain': 4, 'measure': 5},
-                        {'domain': 5, 'measure': 4.7},
-                        {'domain': 6, 'measure': 4},
-                      ],
-                    },
-                  ],
-                  lineColor: (lineData, index, id) => Colors.blue,
-                  lineWidth: 1.5,
-                  includePoints: true,
-                  includeArea: false,
-                ),
+                child: LineChartWidget(),
               ),
               MyText(
                 text: "Wake Up - Avg 7:45 AM",
@@ -134,25 +114,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.3,
-                child: DChartLine(
-                  data: const [
-                    {
-                      'id': 'Line',
-                      'data': [
-                        {'domain': 0, 'measure': 1},
-                        {'domain': 1, 'measure': 1.2},
-                        {'domain': 2, 'measure': 2},
-                        {'domain': 3, 'measure': 3},
-                        {'domain': 4, 'measure': 5},
-                        {'domain': 5, 'measure': 4.7},
-                        {'domain': 6, 'measure': 4},
-                      ],
-                    },
-                  ],
-                  lineColor: (lineData, index, id) => Colors.blue,
-                  includePoints: true,
-                  includeArea: false,
-                ),
+                child: LineChartWidget(),
               ),
               const ChartBar(
                 text: 'Time in Bed - Avg 7hr 23m',
