@@ -28,6 +28,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
   loadVideoPlayer() {
     controller = VideoPlayerController.asset('assets/sleeppad-video.mp4');
+    controller.play();
     controller.addListener(() {
       setState(() {});
     });
@@ -60,7 +61,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
               colors: const VideoProgressColors(
                 backgroundColor: Colors.redAccent,
                 playedColor: Colors.green,
-                bufferedColor: Colors.purple,
+                // bufferedColor: Colors.purple,
               ),
             ),
             Row(

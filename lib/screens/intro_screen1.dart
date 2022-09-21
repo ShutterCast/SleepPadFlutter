@@ -63,7 +63,7 @@ class _IntroScreen1State extends State<IntroScreen1> {
                         "assets/Bed.png",
                         height: MediaQuery.of(context).size.height * 0.5,
                         width: double.maxFinite,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.contain,
                       ),
                       MyButton(
                         onPressed: () {

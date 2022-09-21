@@ -32,14 +32,14 @@ class _ChartBarState extends State<ChartBar> {
     return SfCartesianChart(
         plotAreaBorderWidth: 0,
         primaryXAxis: CategoryAxis(
-          majorGridLines: MajorGridLines(width: 0),
-          axisLine: AxisLine(width: 0),
+          majorGridLines: const MajorGridLines(width: 0),
+          axisLine: const AxisLine(width: 0),
         ),
         isTransposed: true,
         title: ChartTitle(
           text: widget.text,
           alignment: ChartAlignment.near,
-          textStyle: TextStyle(
+          textStyle: const TextStyle(
             color: Colors.white70,
             fontWeight: FontWeight.w300,
           ),
@@ -49,8 +49,8 @@ class _ChartBarState extends State<ChartBar> {
           minimum: 0,
           maximum: 24,
           interval: 10,
-          majorGridLines: MajorGridLines(width: 0),
-          axisLine: AxisLine(width: 0),
+          majorGridLines: const MajorGridLines(width: 0),
+          axisLine: const AxisLine(width: 0),
         ),
         borderWidth: 0,
         borderColor: Colors.transparent,
@@ -58,7 +58,7 @@ class _ChartBarState extends State<ChartBar> {
         backgroundColor: Colors.transparent,
         series: <ChartSeries<_ChartData, String>>[
           BarSeries<_ChartData, String>(
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(10), topRight: Radius.circular(10)),
             dataSource: data,
             xValueMapper: (_ChartData data, _) => data.x,

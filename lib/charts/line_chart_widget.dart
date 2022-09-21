@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class LineChartWidget extends StatefulWidget {
-  const LineChartWidget({Key? key}) : super(key: key);
+  final String text;
+  const LineChartWidget({Key? key, required this.text}) : super(key: key);
 
   @override
   State<LineChartWidget> createState() => _LineChartWidgetState();
@@ -26,6 +27,14 @@ class _LineChartWidgetState extends State<LineChartWidget> {
     ];
 
     return SfCartesianChart(
+      title: ChartTitle(
+        text: widget.text,
+        alignment: ChartAlignment.near,
+        textStyle: TextStyle(
+          color: Colors.white70,
+          fontWeight: FontWeight.w300,
+        ),
+      ),
       enableAxisAnimation: true,
       primaryXAxis: CategoryAxis(
         majorGridLines: const MajorGridLines(width: 0),

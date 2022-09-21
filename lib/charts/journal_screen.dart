@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:sleep_pad/charts/dashboard_screen.dart';
 import 'package:sleep_pad/charts/my_percent_indicator.dart';
 import 'package:sleep_pad/charts/stepper%20chart.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
@@ -7,8 +8,8 @@ import 'package:sleep_pad/widgets/text_widget.dart';
 
 import 'color_box_with_title.dart';
 
-class CalenderScreen extends StatelessWidget {
-  const CalenderScreen({Key? key}) : super(key: key);
+class JournalScreen extends StatelessWidget {
+  const JournalScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +93,7 @@ class CalenderScreen extends StatelessWidget {
                   height: 2,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.3,
+                  height: MediaQuery.of(context).size.height * 0.25,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15),
                     child: Column(
@@ -174,7 +175,7 @@ class CalenderScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            Icon(
+                            const Icon(
                               Icons.share,
                               size: 40,
                               color: Colors.white70,
@@ -205,10 +206,14 @@ class CalenderScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Icon(
-                                Icons.heart_broken,
-                                size: 35,
-                                color: Colors.white,
+                              Image.asset(
+                                "assets/heart-beat.png",
+                                color: Colors.white70,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.05,
+                                width:
+                                    MediaQuery.of(context).size.height * 0.05,
+                                fit: BoxFit.cover,
                               ),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.02,
@@ -223,7 +228,7 @@ class CalenderScreen extends StatelessWidget {
                                     color: Colors.white70,
                                     fontWeight: FontWeight.w300,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   MyText(
@@ -243,10 +248,14 @@ class CalenderScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Icon(
-                                Icons.heart_broken,
-                                size: 35,
-                                color: Colors.white,
+                              Image.asset(
+                                "assets/night-mode.png",
+                                color: Colors.white70,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.05,
+                                width:
+                                    MediaQuery.of(context).size.height * 0.05,
+                                fit: BoxFit.cover,
                               ),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.02,
@@ -261,7 +270,7 @@ class CalenderScreen extends StatelessWidget {
                                     color: Colors.white70,
                                     fontWeight: FontWeight.w300,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   MyText(
@@ -284,10 +293,14 @@ class CalenderScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Icon(
-                                Icons.heart_broken,
-                                color: Colors.white,
-                                size: 35,
+                              Image.asset(
+                                "assets/respiratory-system.png",
+                                color: Colors.white70,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.05,
+                                width:
+                                    MediaQuery.of(context).size.height * 0.05,
+                                fit: BoxFit.cover,
                               ),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.02,
@@ -301,7 +314,7 @@ class CalenderScreen extends StatelessWidget {
                                     color: Colors.white70,
                                     fontWeight: FontWeight.w300,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   MyText(
@@ -321,10 +334,14 @@ class CalenderScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Icon(
-                                Icons.heart_broken,
-                                color: Colors.white,
-                                size: 35,
+                              Image.asset(
+                                "assets/alarm.png",
+                                color: Colors.white70,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.05,
+                                width:
+                                    MediaQuery.of(context).size.height * 0.05,
+                                fit: BoxFit.cover,
                               ),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.02,
@@ -338,7 +355,7 @@ class CalenderScreen extends StatelessWidget {
                                     color: Colors.white70,
                                     fontWeight: FontWeight.w300,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   MyText(
@@ -357,7 +374,6 @@ class CalenderScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-
                 const Divider(
                   color: Colors.white,
                   height: 2,
@@ -382,13 +398,13 @@ class CalenderScreen extends StatelessWidget {
                       ),
                       ColorBoxWithTitle(
                         color: Colors.blue,
-                        text1: "Awake",
+                        text1: "Light",
                         text2: "56%",
                         text3: "3h 53m",
                       ),
                       ColorBoxWithTitle(
                         color: Colors.indigoAccent,
-                        text1: "Awake",
+                        text1: "Deep",
                         text2: "18%",
                         text3: "1h 26m",
                       ),
@@ -397,12 +413,14 @@ class CalenderScreen extends StatelessWidget {
                 ),
 
                 SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.4,
-                    width: double.maxFinite,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
+                  height: MediaQuery.of(context).size.height * 0.4,
+                  width: double.maxFinite,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.symmetric(vertical: 10),
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -428,9 +446,11 @@ class CalenderScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Expanded(child: ChartStepperView()),
-                      ],
-                    )),
+                      ),
+                      const Expanded(child: ChartStepperView()),
+                    ],
+                  ),
+                ),
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.03),
 
@@ -440,7 +460,12 @@ class CalenderScreen extends StatelessWidget {
                     height: MediaQuery.of(context).size.height * 0.065,
                     width: MediaQuery.of(context).size.width * 0.3,
                     roundSize: 0,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const DashBoardScreen()));
+                    },
                     title: "Next",
                     fontSize: 16,
                     fontWeight: FontWeight.w400,

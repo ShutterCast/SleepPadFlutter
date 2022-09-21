@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sleep_pad/charts/dashboard_screen.dart';
+import 'package:sleep_pad/charts/journal_screen.dart';
 import 'package:sleep_pad/screens/video_player_screen.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
@@ -88,9 +88,11 @@ class _IntroScreen2State extends State<IntroScreen2> {
                       MyButton(
                         onPressed: () {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => DashBoardScreen()));
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => JournalScreen(),
+                            ),
+                          );
                         },
                         title: "Watch Demo",
                         color: Colors.indigo,

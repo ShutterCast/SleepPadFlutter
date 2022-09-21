@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sleep_pad/charts/bar_chart.dart';
-import 'package:sleep_pad/charts/calender_screen.dart';
 import 'package:sleep_pad/charts/line_chart_widget.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
@@ -96,25 +95,32 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                 height: 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-              MyText(
-                text: "Heart Rate - Avg 66 BPM",
-                fontSize: 16,
-                fontWeight: FontWeight.w300,
-                color: Colors.white70,
+
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.3,
+                child: const LineChartWidget(
+                  text: 'Heart Rate - Avg 66 BPM',
+                ),
+              ),
+
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.3,
+                child: const LineChartWidget(
+                  text: 'Respiration Rate - Avg 14 BPM',
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.3,
-                child: LineChartWidget(),
+                child: const LineChartWidget(
+                  text: 'Went to Bed - Avg 7:45 AM',
+                ),
               ),
-              MyText(
-                text: "Wake Up - Avg 7:45 AM",
-                fontSize: 16,
-                fontWeight: FontWeight.w300,
-                color: Colors.white70,
-              ),
+
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.3,
-                child: LineChartWidget(),
+                child: const LineChartWidget(
+                  text: 'Woke Up - Avg 7:45 AM',
+                ),
               ),
               const ChartBar(
                 text: 'Time in Bed - Avg 7hr 23m',
@@ -126,12 +132,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                 child: MyButton(
                   height: MediaQuery.of(context).size.height * 0.065,
                   width: MediaQuery.of(context).size.width * 0.3,
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => CalenderScreen()));
-                  },
+                  onPressed: () {},
                   roundSize: 0,
                   title: "Next",
                   color: Colors.purple,
