@@ -25,8 +25,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
             tileMode: TileMode.clamp,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFF7c5295),
-              Color(0xFF271d4d),
+              Color(0xff371f56),
+              Color(0xff0d0628),
             ],
           ),
         ),
