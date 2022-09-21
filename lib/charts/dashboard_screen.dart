@@ -2,7 +2,6 @@ import 'package:d_chart/d_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:sleep_pad/charts/bar_chart.dart';
 import 'package:sleep_pad/charts/calender_screen.dart';
-import 'package:sleep_pad/charts/line_chart_widget.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
@@ -106,6 +105,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.3,
                 child: DChartLine(
+                  animate: true,
                   data: const [
                     {
                       'id': 'Line',
@@ -121,6 +121,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                     },
                   ],
                   lineColor: (lineData, index, id) => Colors.blue,
+                  lineWidth: 1.5,
                   includePoints: true,
                   includeArea: false,
                 ),

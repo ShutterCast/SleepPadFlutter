@@ -5,6 +5,8 @@ import 'package:sleep_pad/charts/stepper%20chart.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
+import 'color_box_with_title.dart';
+
 class CalenderScreen extends StatelessWidget {
   const CalenderScreen({Key? key}) : super(key: key);
 
@@ -190,78 +192,165 @@ class CalenderScreen extends StatelessWidget {
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.04),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.1,
+                  height: MediaQuery.of(context).size.height * 0.2,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Row(
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Icon(
-                            Icons.heart_broken,
-                            size: 35,
-                            color: Colors.white,
-                          ),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.02,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                          Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              MyText(
-                                text: "65 BPM",
-                                fontSize: 20,
-                                color: Colors.white70,
-                                fontWeight: FontWeight.w300,
+                              const Icon(
+                                Icons.heart_broken,
+                                size: 35,
+                                color: Colors.white,
                               ),
                               SizedBox(
-                                height: 5,
+                                width: MediaQuery.of(context).size.width * 0.02,
                               ),
-                              MyText(
-                                text: "Heart Rate >",
-                                fontSize: 14,
-                                color: Colors.white70,
-                                fontWeight: FontWeight.w300,
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  MyText(
+                                    text: "65 BPM",
+                                    fontSize: 20,
+                                    color: Colors.white70,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  MyText(
+                                    text: "Heart Rate >",
+                                    fontSize: 14,
+                                    color: Colors.white70,
+                                    fontWeight: FontWeight.w300,
+                                  )
+                                ],
                               )
                             ],
-                          )
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.01,
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Icon(
+                                Icons.heart_broken,
+                                size: 35,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.02,
+                              ),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  MyText(
+                                    text: "9:30PM",
+                                    fontSize: 20,
+                                    color: Colors.white70,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  MyText(
+                                    text: "Went to bed >",
+                                    fontSize: 14,
+                                    color: Colors.white70,
+                                    fontWeight: FontWeight.w300,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ],
                       ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Icon(
-                            Icons.heart_broken,
-                            color: Colors.white,
-                            size: 35,
-                          ),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.02,
-                          ),
-                          Column(
+                          Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              MyText(
-                                text: "14 BPM",
-                                fontSize: 20,
-                                color: Colors.white70,
-                                fontWeight: FontWeight.w300,
+                              Icon(
+                                Icons.heart_broken,
+                                color: Colors.white,
+                                size: 35,
                               ),
                               SizedBox(
-                                height: 5,
+                                width: MediaQuery.of(context).size.width * 0.02,
                               ),
-                              MyText(
-                                text: "Respiration Rate >",
-                                fontSize: 14,
-                                color: Colors.white70,
-                                fontWeight: FontWeight.w300,
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  MyText(
+                                    text: "14 BPM",
+                                    fontSize: 20,
+                                    color: Colors.white70,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  MyText(
+                                    text: "Respiration Rate >",
+                                    fontSize: 14,
+                                    color: Colors.white70,
+                                    fontWeight: FontWeight.w300,
+                                  )
+                                ],
                               )
                             ],
-                          )
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.01,
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(
+                                Icons.heart_broken,
+                                color: Colors.white,
+                                size: 35,
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.02,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  MyText(
+                                    text: "7:30AM",
+                                    fontSize: 20,
+                                    color: Colors.white70,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  MyText(
+                                    text: "Woke Up >",
+                                    fontSize: 14,
+                                    color: Colors.white70,
+                                    fontWeight: FontWeight.w300,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ],
                       )
                     ],
@@ -269,148 +358,79 @@ class CalenderScreen extends StatelessWidget {
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.03),
 
+                const Divider(
+                  color: Colors.white,
+                  height: 2,
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.1,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.018,
-                                width:
-                                    MediaQuery.of(context).size.width * 0.030,
-                                color: Colors.pinkAccent,
-                              ),
-                              const SizedBox(
-                                width: 5,
-                              ),
-                              MyText(
-                                  text: "Awake",
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 12),
-                            ],
-                          ),
-                          MyText(
-                              text: "4%",
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12),
-                          MyText(
-                              text: "28mm",
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12),
-                        ],
+                    children: const [
+                      ColorBoxWithTitle(
+                        color: Colors.pinkAccent,
+                        text1: "Awake",
+                        text2: "4%",
+                        text3: "28m",
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.018,
-                                width:
-                                    MediaQuery.of(context).size.width * 0.030,
-                                color: Colors.lightBlueAccent,
-                              ),
-                              const SizedBox(
-                                width: 5,
-                              ),
-                              MyText(
-                                  text: "REM",
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 12),
-                            ],
-                          ),
-                          MyText(
-                              text: "22%",
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12),
-                          MyText(
-                              text: "1h 35mm",
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12),
-                        ],
+                      ColorBoxWithTitle(
+                        color: Colors.lightBlueAccent,
+                        text1: "REM",
+                        text2: "22%",
+                        text3: "1h 35m",
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.018,
-                                width:
-                                    MediaQuery.of(context).size.width * 0.030,
-                                color: Colors.blue,
-                              ),
-                              const SizedBox(
-                                width: 5,
-                              ),
-                              MyText(
-                                  text: "Light",
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 12),
-                            ],
-                          ),
-                          MyText(
-                              text: "56%",
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12),
-                          MyText(
-                              text: "3h 53m",
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12),
-                        ],
+                      ColorBoxWithTitle(
+                        color: Colors.blue,
+                        text1: "Awake",
+                        text2: "56%",
+                        text3: "3h 53m",
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.018,
-                                width:
-                                    MediaQuery.of(context).size.width * 0.030,
-                                color: Colors.indigo,
-                              ),
-                              const SizedBox(
-                                width: 5,
-                              ),
-                              MyText(
-                                  text: "Deep",
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 12),
-                            ],
-                          ),
-                          MyText(
-                              text: "18%",
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12),
-                          MyText(
-                              text: "1h 26mm",
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12),
-                        ],
+                      ColorBoxWithTitle(
+                        color: Colors.indigoAccent,
+                        text1: "Awake",
+                        text2: "18%",
+                        text3: "1h 26m",
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.03),
 
                 SizedBox(
                     height: MediaQuery.of(context).size.height * 0.4,
                     width: double.maxFinite,
-                    child: const ChartStepperView()),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            MyText(
+                              text: "Awake",
+                              color: Colors.white70,
+                              fontSize: 12,
+                            ),
+                            MyText(
+                              text: "REM",
+                              color: Colors.white70,
+                              fontSize: 12,
+                            ),
+                            MyText(
+                              text: "Light",
+                              color: Colors.white70,
+                              fontSize: 12,
+                            ),
+                            MyText(
+                              text: "Deep",
+                              color: Colors.white70,
+                              fontSize: 12,
+                            ),
+                          ],
+                        ),
+                        Expanded(child: ChartStepperView()),
+                      ],
+                    )),
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.03),
 

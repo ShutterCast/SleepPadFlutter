@@ -85,21 +85,21 @@ class _IntroScreen2State extends State<IntroScreen2> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
-                      // MyButton(
-                      //   onPressed: () {
-                      //     Navigator.push(
-                      //         context,
-                      //         MaterialPageRoute(
-                      //             builder: (context) => DashBoardScreen()));
-                      //   },
-                      //   title: "Watch Demo",
-                      //   color: Colors.indigo,
-                      //   height: MediaQuery.of(context).size.height * 0.062,
-                      //   width: MediaQuery.of(context).size.width * 0.40,
-                      //   roundSize: 0,
-                      //   fontSize: 15,
-                      //   fontWeight: FontWeight.w400,
-                      // ),
+                      MyButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DashBoardScreen()));
+                        },
+                        title: "Watch Demo",
+                        color: Colors.indigo,
+                        height: MediaQuery.of(context).size.height * 0.062,
+                        width: MediaQuery.of(context).size.width * 0.40,
+                        roundSize: 0,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ],
                   ),
                 ],

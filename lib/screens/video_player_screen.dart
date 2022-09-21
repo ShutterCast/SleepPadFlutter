@@ -20,6 +20,12 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     super.initState();
   }
 
+  @override
+  void dispose() {
+    super.dispose();
+    controller.pause();
+  }
+
   loadVideoPlayer() {
     controller = VideoPlayerController.asset('assets/sleeppad-video.mp4');
     controller.addListener(() {
