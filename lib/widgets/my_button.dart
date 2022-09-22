@@ -11,18 +11,7 @@ class MyButton extends StatelessWidget {
   final double? width;
   final double? fontSize;
   final FontWeight? fontWeight;
-  const MyButton(
-      {Key? key,
-      required this.onPressed,
-      required this.title,
-      required this.color,
-      this.roundSize,
-      this.height,
-      this.width,
-      this.fontSize,
-      this.textColor,
-      this.fontWeight})
-      : super(key: key);
+  const MyButton({Key? key, required this.onPressed, required this.title, required this.color, this.roundSize, this.height, this.width, this.fontSize, this.textColor, this.fontWeight}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +21,7 @@ class MyButton extends StatelessWidget {
             width: width,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
+                elevation: 2,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(roundSize ?? 8),
                 ),
@@ -48,6 +38,7 @@ class MyButton extends StatelessWidget {
           )
         : ElevatedButton(
             style: ElevatedButton.styleFrom(
+              elevation: 2,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(roundSize ?? 8),
               ),
@@ -58,7 +49,7 @@ class MyButton extends StatelessWidget {
               textOverflow: TextOverflow.ellipsis,
               text: title,
               fontSize: fontSize ?? 16,
-              fontWeight: fontWeight ?? FontWeight.bold,
+              fontWeight: fontWeight ?? FontWeight.w400,
               color: textColor ?? Colors.white,
             ),
           );
