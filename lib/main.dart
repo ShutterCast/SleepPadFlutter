@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sleep_pad/screens/splash_screen.dart';
 import 'package:sleep_pad/screens/splash_screen_home.dart';
+
 import 'Utils.dart';
 import 'firebase_options.dart';
 
@@ -16,8 +17,7 @@ Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.purple,
   ));
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 }
 
 final navigatorKey = GlobalKey<NavigatorState>();

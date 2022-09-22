@@ -61,7 +61,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
               colors: const VideoProgressColors(
                 backgroundColor: Colors.redAccent,
                 playedColor: Colors.green,
-                // bufferedColor: Colors.purple,
+                bufferedColor: Colors.transparent,
               ),
             ),
             Row(
@@ -76,16 +76,17 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                       }
                       setState(() {});
                     },
-                    icon: Icon(controller.value.isPlaying
-                        ? Icons.pause
-                        : Icons.play_arrow)),
+                    icon: Icon(controller.value.isPlaying ? Icons.pause : Icons.play_arrow)),
                 IconButton(
-                    onPressed: () {
-                      controller.seekTo(Duration(seconds: 0));
+                  onPressed: () {
+                    controller.seekTo(
+                      Duration(seconds: 0),
+                    );
 
-                      setState(() {});
-                    },
-                    icon: Icon(Icons.stop))
+                    setState(() {});
+                  },
+                  icon: Icon(Icons.stop),
+                )
               ],
             )
           ],

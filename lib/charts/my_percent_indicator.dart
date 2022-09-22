@@ -22,13 +22,13 @@ class MyPercentIndicator extends StatelessWidget {
       animationDuration: 2500,
       backgroundColor: Colors.white,
       progressColor: Colors.purple,
+      circularStrokeCap: CircularStrokeCap.round,
       center: CircleAvatar(
         backgroundColor: Colors.transparent,
         radius: 10,
         child: Text(
           title,
-          style: const TextStyle(
-              fontSize: 14, color: Colors.white70, fontWeight: FontWeight.w400),
+          style: const TextStyle(fontSize: 14, color: Colors.white70, fontWeight: FontWeight.w400),
         ),
       ),
     );

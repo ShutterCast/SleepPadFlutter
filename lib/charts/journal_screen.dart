@@ -104,8 +104,7 @@ class JournalScreen extends StatelessWidget {
                           fontWeight: FontWeight.w300,
                           fontSize: 18,
                         ),
-                        SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.04),
+                        SizedBox(height: MediaQuery.of(context).size.height * 0.04),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -119,23 +118,20 @@ class JournalScreen extends StatelessWidget {
                               animationDuration: 2500,
                               backgroundColor: Colors.white,
                               progressColor: Colors.purple,
+                              circularStrokeCap: CircularStrokeCap.round,
                               center: const CircleAvatar(
                                 backgroundColor: Colors.transparent,
                                 radius: 30,
                                 child: Text(
                                   "83 %",
-                                  style: TextStyle(
-                                      fontSize: 24,
-                                      color: Colors.white70,
-                                      fontWeight: FontWeight.w300),
+                                  style: TextStyle(fontSize: 24, color: Colors.white70, fontWeight: FontWeight.w300),
                                 ),
                               ),
                             ),
                             Column(
                               children: [
                                 Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                   children: [
                                     MyText(
                                       text: "8h 28m",
@@ -152,12 +148,10 @@ class JournalScreen extends StatelessWidget {
                                   ],
                                 ),
                                 SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.025,
+                                  height: MediaQuery.of(context).size.height * 0.025,
                                 ),
                                 Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                   children: [
                                     MyText(
                                       text: "7h 43m",
@@ -209,10 +203,8 @@ class JournalScreen extends StatelessWidget {
                               Image.asset(
                                 "assets/heart-beat.png",
                                 color: Colors.white70,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.05,
-                                width:
-                                    MediaQuery.of(context).size.height * 0.05,
+                                height: MediaQuery.of(context).size.height * 0.05,
+                                width: MediaQuery.of(context).size.height * 0.05,
                                 fit: BoxFit.cover,
                               ),
                               SizedBox(
@@ -251,10 +243,8 @@ class JournalScreen extends StatelessWidget {
                               Image.asset(
                                 "assets/night-mode.png",
                                 color: Colors.white70,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.05,
-                                width:
-                                    MediaQuery.of(context).size.height * 0.05,
+                                height: MediaQuery.of(context).size.height * 0.05,
+                                width: MediaQuery.of(context).size.height * 0.05,
                                 fit: BoxFit.cover,
                               ),
                               SizedBox(
@@ -296,10 +286,8 @@ class JournalScreen extends StatelessWidget {
                               Image.asset(
                                 "assets/respiratory-system.png",
                                 color: Colors.white70,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.05,
-                                width:
-                                    MediaQuery.of(context).size.height * 0.05,
+                                height: MediaQuery.of(context).size.height * 0.05,
+                                width: MediaQuery.of(context).size.height * 0.05,
                                 fit: BoxFit.cover,
                               ),
                               SizedBox(
@@ -337,10 +325,8 @@ class JournalScreen extends StatelessWidget {
                               Image.asset(
                                 "assets/alarm.png",
                                 color: Colors.white70,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.05,
-                                width:
-                                    MediaQuery.of(context).size.height * 0.05,
+                                height: MediaQuery.of(context).size.height * 0.05,
+                                width: MediaQuery.of(context).size.height * 0.05,
                                 fit: BoxFit.cover,
                               ),
                               SizedBox(
@@ -461,10 +447,7 @@ class JournalScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.3,
                     roundSize: 0,
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const DashBoardScreen()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const DashBoardScreen()));
                     },
                     title: "Next",
                     fontSize: 16,
