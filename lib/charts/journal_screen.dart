@@ -93,7 +93,7 @@ class JournalScreen extends StatelessWidget {
                   height: 2,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.25,
+                  height: MediaQuery.of(context).size.height * 0.28,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15),
                     child: Column(
@@ -180,7 +180,7 @@ class JournalScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                // SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.01),
                 const Divider(
                   color: Colors.white,
                   height: 2,
@@ -397,7 +397,6 @@ class JournalScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.4,
                   width: double.maxFinite,
@@ -437,9 +436,7 @@ class JournalScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-
                 SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 70),
                   child: MyButton(
