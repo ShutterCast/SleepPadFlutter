@@ -18,16 +18,27 @@ class BTSearchScreen extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.0,
                 ),
-                MyText(
-                  text: "Congratulations, your SLEEP PAD has \n been successfully connected to the \n App and is ready to use.",
-                  textAlign: TextAlign.center,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 24,
-                ),
-                Container(
-                  height: 200,
-                  width: 200,
-                  color: Colors.amber,
+                Column(
+                  children: [
+                    MyText(
+                      text: "Congratulations, your SLEEP PAD has \n been successfully connected to the \n App and is ready to use.",
+                      textAlign: TextAlign.center,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.purple,
+                      maxLines: 4,
+                      fontSize: 18,
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.05,
+                    ),
+                    Image.asset(
+                      "assets/read.png",
+                      height: MediaQuery.of(context).size.height * 0.2,
+                      width: MediaQuery.of(context).size.width * 0.4,
+                      color: Colors.amber,
+                      fit: BoxFit.contain,
+                    ),
+                  ],
                 ),
                 MyButton(
                   width: double.maxFinite,
