@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sleep_pad/charts/bar_chart.dart';
 import 'package:sleep_pad/charts/line_chart_widget.dart';
-import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
 class DashBoardScreen extends StatefulWidget {
@@ -125,19 +124,19 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               const ChartBar(
                 text: 'Time in Bed - Avg 7hr 23m',
               ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+              // SizedBox(height: MediaQuery.of(context).size.height * 0.03),
 
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: 70),
-                child: MyButton(
-                  height: MediaQuery.of(context).size.height * 0.065,
-                  width: MediaQuery.of(context).size.width * 0.3,
-                  onPressed: () {},
-                  roundSize: 0,
-                  title: "Next",
-                  color: Colors.purple,
-                ),
-              )
+              // Container(
+              //   margin: const EdgeInsets.symmetric(horizontal: 70),
+              //   child: MyButton(
+              //     height: MediaQuery.of(context).size.height * 0.065,
+              //     width: MediaQuery.of(context).size.width * 0.3,
+              //     onPressed: () {},
+              //     roundSize: 0,
+              //     title: "Next",
+              //     color: Colors.purple,
+              //   ),
+              // )
 
               // Container(height: 200, child: LineChartWidget())
             ],
@@ -158,8 +157,7 @@ class ChartFilterText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(context).size.height * 0.028),
+      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.height * 0.028),
       child: Text(
         title,
         style: const TextStyle(

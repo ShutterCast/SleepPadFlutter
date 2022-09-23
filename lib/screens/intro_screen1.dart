@@ -32,54 +32,51 @@ class _IntroScreen1State extends State<IntroScreen1> {
   Widget build(BuildContext context) {
     return (localHeight.isEmpty)
         ? ProfileScreen()
-        : Scaffold(
-            body: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10, bottom: 0, top: 30),
-                child: SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.95,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      MyText(
-                        textAlign: TextAlign.center,
-                        text: "Introducing SLEEP PAD - India's First \nNon-Intrusive Sleep Tracking Device \nwhich helps you improve your sleep by \nmonitoring your sleep patterns \n",
-                        color: Colors.purple,
-                        maxLines: 4,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
-                      MyText(
-                        textAlign: TextAlign.center,
-                        text: "The SLEEP PAD App provides you with \n your own personalised Sleep \n Dashboard and a Sleep Score",
-                        color: Colors.purple,
-                        maxLines: 3,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
-                      Image.asset(
-                        "assets/Bed.png",
-                        height: MediaQuery.of(context).size.height * 0.5,
-                        width: double.maxFinite,
-                        fit: BoxFit.contain,
-                      ),
-                      MyButton(
-                        onPressed: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => const IntroScreen2()));
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const BTFindingScreen()));
-                        },
-                        title: "Next",
-                        color: Colors.indigo,
-                        width: MediaQuery.of(context).size.width * 0.5,
-                        roundSize: 0,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ],
-                  ),
+        : SafeArea(
+            child: Scaffold(
+              body: Padding(
+                padding: const EdgeInsets.only(left: 10, right: 10, bottom: 5, top: 30),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    MyText(
+                      textAlign: TextAlign.center,
+                      text: "Introducing SLEEP PAD - India's First \nNon-Intrusive Sleep Tracking Device \nwhich helps you improve your sleep by \nmonitoring your sleep patterns \n",
+                      color: Colors.purple,
+                      maxLines: 4,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                    MyText(
+                      textAlign: TextAlign.center,
+                      text: "The SLEEP PAD App provides you with \n your own personalised Sleep \n Dashboard and a Sleep Score",
+                      color: Colors.purple,
+                      maxLines: 3,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                    Image.asset(
+                      "assets/Bed.png",
+                      height: MediaQuery.of(context).size.height * 0.5,
+                      width: double.maxFinite,
+                      fit: BoxFit.contain,
+                    ),
+                    MyButton(
+                      onPressed: () {
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (context) => const IntroScreen2()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const BTFindingScreen()));
+                      },
+                      title: "Next",
+                      color: Colors.indigo,
+                      width: double.maxFinite,
+                      roundSize: 0,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ],
                 ),
               ),
             ),

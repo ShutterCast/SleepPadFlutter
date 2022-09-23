@@ -12,7 +12,14 @@ class CustomBotNavBar extends StatefulWidget {
 }
 
 class _CustomBotNavBarState extends State<CustomBotNavBar> {
-  int currentIndex = 3;
+  int currentIndex = 0;
+
+  void changeActivePage(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
   final screens = [
     HomeScreen(),
     JournalScreen(),
@@ -23,23 +30,21 @@ class _CustomBotNavBarState extends State<CustomBotNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(index: currentIndex, children: screens
-          // get
-          // Screens(widget.isAppBar ?? true, widget.appBarSelected ?? 1),
-          ),
-      bottomNavigationBar: Container(
-        height: MediaQuery.of(context).size.height * 0.1,
+      body: IndexedStack(index: currentIndex, children: screens),
+      bottomNavigationBar: SizedBox(
+        height: MediaQuery.of(context).size.height * 0.085,
         child: Theme(
           data: Theme.of(context).copyWith(canvasColor: Colors.indigo),
           child: BottomNavigationBar(
             backgroundColor: Colors.indigo,
             currentIndex: currentIndex,
             selectedItemColor: Colors.white,
-            selectedLabelStyle: TextStyle(fontSize: 14),
-            unselectedLabelStyle: TextStyle(fontSize: 14),
+            selectedLabelStyle: const TextStyle(fontSize: 13),
+            unselectedLabelStyle: const TextStyle(fontSize: 13),
             unselectedItemColor: Colors.white.withOpacity(0.7),
-            iconSize: 24,
+            iconSize: 22,
             unselectedIconTheme: IconThemeData(
+              size: 22,
               color: Colors.white.withOpacity(0.7),
             ),
             showUnselectedLabels: true,
@@ -48,19 +53,31 @@ class _CustomBotNavBarState extends State<CustomBotNavBar> {
             items: const [
               BottomNavigationBarItem(
                 label: 'HOME',
-                icon: Icon(Icons.notifications),
+                icon: Padding(
+                  padding: EdgeInsets.only(bottom: 3),
+                  child: Icon(Icons.notifications),
+                ),
               ),
               BottomNavigationBarItem(
                 label: 'JOURNAL',
-                icon: Icon(Icons.favorite),
+                icon: Padding(
+                  padding: EdgeInsets.only(bottom: 3),
+                  child: Icon(Icons.favorite),
+                ),
               ),
               BottomNavigationBarItem(
                 label: 'DASHBOARD',
-                icon: Icon(Icons.settings),
+                icon: Padding(
+                  padding: EdgeInsets.only(bottom: 3),
+                  child: Icon(Icons.settings),
+                ),
               ),
               BottomNavigationBarItem(
                 label: 'SETTINGS',
-                icon: Icon(Icons.build),
+                icon: Padding(
+                  padding: EdgeInsets.only(bottom: 3),
+                  child: Icon(Icons.build),
+                ),
               ),
             ],
           ),

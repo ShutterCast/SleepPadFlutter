@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_alarm_clock/flutter_alarm_clock.dart';
 import 'package:sleep_pad/screens/start_tracking.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
@@ -53,7 +54,9 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     MyButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        FlutterAlarmClock.showAlarms();
+                      },
                       title: "SETUP AN ALARM",
                       color: Colors.amber,
                       fontWeight: FontWeight.w400,
@@ -63,6 +66,7 @@ class HomeScreen extends StatelessWidget {
                     MyButton(
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => const StartTrackingScreen()));
+                        // Navigator.of(context, rootNavigator: false).push(MaterialPageRoute(builder: (context) => StartTrackingScreen(), maintainState: false));
                       },
                       title: "START MONITORING",
                       color: Colors.amber,

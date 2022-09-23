@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:sleep_pad/charts/dashboard_screen.dart';
 import 'package:sleep_pad/charts/my_percent_indicator.dart';
 import 'package:sleep_pad/charts/stepper%20chart.dart';
-import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
 import 'color_box_with_title.dart';
@@ -436,22 +434,22 @@ class JournalScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 70),
-                  child: MyButton(
-                    height: MediaQuery.of(context).size.height * 0.065,
-                    width: MediaQuery.of(context).size.width * 0.3,
-                    roundSize: 0,
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const DashBoardScreen()));
-                    },
-                    title: "Next",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.purple,
-                  ),
-                )
+                // SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+                // Container(
+                //   margin: const EdgeInsets.symmetric(horizontal: 70),
+                //   child: MyButton(
+                //     height: MediaQuery.of(context).size.height * 0.065,
+                //     width: MediaQuery.of(context).size.width * 0.3,
+                //     roundSize: 0,
+                //     onPressed: () {
+                //       Navigator.push(context, MaterialPageRoute(builder: (context) => const DashBoardScreen()));
+                //     },
+                //     title: "Next",
+                //     fontSize: 16,
+                //     fontWeight: FontWeight.w400,
+                //     color: Colors.purple,
+                //   ),
+                // )
               ],
             ),
           ),
