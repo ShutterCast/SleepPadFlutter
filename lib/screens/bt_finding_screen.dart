@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sleep_pad/screens/bt_search.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
@@ -106,7 +107,9 @@ class BTFindingScreen extends StatelessWidget {
                 ),
                 MyButton(
                   width: double.maxFinite,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const BTSearchScreen()));
+                  },
                   title: "Cancel",
                   color: Colors.indigo,
                   fontWeight: FontWeight.w400,

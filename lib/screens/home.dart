@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sleep_pad/screens/start_tracking.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
@@ -49,7 +50,7 @@ class HomeScreen extends StatelessWidget {
                   color: Colors.purple,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     MyButton(
                       onPressed: () {},
@@ -60,7 +61,9 @@ class HomeScreen extends StatelessWidget {
                       roundSize: 0,
                     ),
                     MyButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const StartTrackingScreen()));
+                      },
                       title: "START MONITORING",
                       color: Colors.amber,
                       fontWeight: FontWeight.w400,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sleep_pad/screens/bot_nav_bar.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
@@ -42,8 +43,10 @@ class BTSearchScreen extends StatelessWidget {
                 ),
                 MyButton(
                   width: double.maxFinite,
-                  onPressed: () {},
-                  title: "Cancel",
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const CustomBotNavBar()), (route) => false);
+                  },
+                  title: "Next",
                   color: Colors.indigo,
                   fontWeight: FontWeight.w400,
                   roundSize: 0,

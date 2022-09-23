@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sleep_pad/screens/intro_screen_2.dart';
 import 'package:sleep_pad/screens/profile_additional_screen.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
+
+import 'bt_finding_screen.dart';
 
 class IntroScreen1 extends StatefulWidget {
   const IntroScreen1({Key? key}) : super(key: key);
@@ -34,8 +35,7 @@ class _IntroScreen1State extends State<IntroScreen1> {
         : Scaffold(
             body: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.only(
-                    left: 10, right: 10, bottom: 0, top: 30),
+                padding: const EdgeInsets.only(left: 10, right: 10, bottom: 0, top: 30),
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height * 0.95,
                   child: Column(
@@ -43,8 +43,7 @@ class _IntroScreen1State extends State<IntroScreen1> {
                     children: [
                       MyText(
                         textAlign: TextAlign.center,
-                        text:
-                            "Introducing SLEEP PAD - India's First \nNon-Intrusive Sleep Tracking Device \nwhich helps you improve your sleep by \nmonitoring your sleep patterns \n",
+                        text: "Introducing SLEEP PAD - India's First \nNon-Intrusive Sleep Tracking Device \nwhich helps you improve your sleep by \nmonitoring your sleep patterns \n",
                         color: Colors.purple,
                         maxLines: 4,
                         fontWeight: FontWeight.bold,
@@ -52,8 +51,7 @@ class _IntroScreen1State extends State<IntroScreen1> {
                       ),
                       MyText(
                         textAlign: TextAlign.center,
-                        text:
-                            "The SLEEP PAD App provides you with \n your own personalised Sleep \n Dashboard and a Sleep Score",
+                        text: "The SLEEP PAD App provides you with \n your own personalised Sleep \n Dashboard and a Sleep Score",
                         color: Colors.purple,
                         maxLines: 3,
                         fontWeight: FontWeight.bold,
@@ -67,10 +65,11 @@ class _IntroScreen1State extends State<IntroScreen1> {
                       ),
                       MyButton(
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const IntroScreen2()));
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => const IntroScreen2()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const BTFindingScreen()));
                         },
                         title: "Next",
                         color: Colors.indigo,
