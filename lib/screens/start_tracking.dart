@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sleep_pad/screens/stop_monitoring_screen.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
@@ -17,7 +18,7 @@ class StartTrackingScreen extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Container(
+          child: SizedBox(
             height: MediaQuery.of(context).size.height * 0.5,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -33,7 +34,14 @@ class StartTrackingScreen extends StatelessWidget {
                 ),
                 MyButton(
                   width: MediaQuery.of(context).size.width * 0.4,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => StopMonitoringScreen(),
+                      ),
+                    );
+                  },
                   title: "CONTINUE",
                   fontWeight: FontWeight.w400,
                   color: Colors.amber,
