@@ -14,12 +14,6 @@ class CustomBotNavBar extends StatefulWidget {
 class _CustomBotNavBarState extends State<CustomBotNavBar> {
   int currentIndex = 0;
 
-  // void changeActivePage(int index) {
-  //   setState(() {
-  //     currentIndex = index;
-  //   });
-  // }
-
   final screens = [
     HomeScreen(),
     JournalScreen(),

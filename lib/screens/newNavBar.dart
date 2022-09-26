@@ -14,14 +14,13 @@ class NewBar extends StatefulWidget {
 
 class _NewBarState extends State<NewBar> {
   PersistentTabController? _controller;
-  late bool _hideNavBar;
 
   int currentIndex = 0;
   final screens = [
-    HomeScreen(),
-    JournalScreen(),
-    DashBoardScreen(),
-    HomeScreen(),
+    const HomeScreen(),
+    const JournalScreen(),
+    const DashBoardScreen(),
+    const HomeScreen(),
   ];
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
@@ -65,11 +64,11 @@ class _NewBarState extends State<NewBar> {
       screens: screens,
       items: _navBarsItems(),
       confineInSafeArea: true,
-      backgroundColor: Colors.purple, // Default is Colors.white.
-      handleAndroidBackButtonPress: true, // Default is true.
-      resizeToAvoidBottomInset: true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
-      stateManagement: true, // Default is true.
-      hideNavigationBarWhenKeyboardShows: true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
+      backgroundColor: Colors.indigo,
+      handleAndroidBackButtonPress: true,
+      resizeToAvoidBottomInset: true,
+      stateManagement: true,
+      hideNavigationBarWhenKeyboardShows: true,
       decoration: NavBarDecoration(
         borderRadius: BorderRadius.circular(0.0),
         colorBehindNavBar: Colors.white,
@@ -77,7 +76,6 @@ class _NewBarState extends State<NewBar> {
       popAllScreensOnTapOfSelectedTab: true,
       popActionScreens: PopActionScreensType.all,
       itemAnimationProperties: ItemAnimationProperties(
-        // Navigation Bar's items animation properties.
         duration: Duration(milliseconds: 300),
         curve: Curves.easeIn,
       ),
