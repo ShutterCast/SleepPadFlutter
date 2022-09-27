@@ -64,7 +64,7 @@ class _ChartBarState extends State<ChartBar> {
             xValueMapper: (_ChartData data, _) => data.x,
             yValueMapper: (_ChartData data, _) => data.y,
             name: 'Gold',
-            color: Colors.indigoAccent,
+            color: Colors.purple,
           )
         ]);
   }

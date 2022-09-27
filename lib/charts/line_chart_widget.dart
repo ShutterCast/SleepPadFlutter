@@ -46,11 +46,12 @@ class _LineChartWidgetState extends State<LineChartWidget> {
       ),
       series: <ChartSeries>[
         SplineSeries<ChartData, String>(
+          color: Colors.purple,
           enableTooltip: true,
           width: 1,
           markerSettings: const MarkerSettings(
             isVisible: true,
-            color: Colors.blue,
+            color: Colors.purple,
             shape: DataMarkerType.circle,
           ),
           dataSource: chartData,

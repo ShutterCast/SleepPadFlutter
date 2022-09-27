@@ -63,10 +63,6 @@ class _IntroScreen1State extends State<IntroScreen1> {
                     ),
                     MyButton(
                       onPressed: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => const IntroScreen2()));
                         Navigator.push(context, MaterialPageRoute(builder: (context) => const BTFindingScreen()));
                       },
                       title: "Next",
