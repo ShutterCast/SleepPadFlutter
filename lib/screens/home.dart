@@ -5,6 +5,8 @@ import 'package:sleep_pad/screens/start_tracking.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
+import '../charts/my_percent_indicator.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -23,27 +25,23 @@ class HomeScreen extends StatelessWidget {
         child: Stack(alignment: Alignment.topRight, children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(top: 8.0, right: 8.0),
-            child: CircularPercentIndicator(
-              radius: 100,
-              lineWidth: 12,
-              percent: 83 / 100,
-              animation: true,
-              startAngle: 0,
-              animationDuration: 2500,
-              backgroundColor: Colors.white,
-              progressColor: Colors.purple,
-              circularStrokeCap: CircularStrokeCap.round,
-              center: const CircleAvatar(
-                backgroundColor: Colors.transparent,
-                radius: 30,
-                child: Text(
-                  "83 %",
-                  style: TextStyle(
-                      fontSize: 24,
-                      color: Colors.purple,
-                      fontWeight: FontWeight.w300),
+            child: Column(
+              children: [
+                MyPercentIndicator(
+                  title: "",
+                  percent: 75,
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.only(top:8.0),
+                  child: MyText(
+                    text: "Battery",
+                    fontSize: 12,
+                    letterSpacing: 1,
+                    color: Colors.purple,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
           ),
           Center(
