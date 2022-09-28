@@ -15,14 +15,7 @@ class _ChartBarState extends State<ChartBar> {
 
   @override
   void initState() {
-    data = [
-      _ChartData('Mon', 12),
-      _ChartData('Tue', 15),
-      _ChartData('Wed', 20),
-      _ChartData('Thu', 6.4),
-      _ChartData('Fri', 14),
-      _ChartData('Sat', 14)
-    ];
+    data = [_ChartData('Mon', 12), _ChartData('Tue', 15), _ChartData('Wed', 20), _ChartData('Thu', 6.4), _ChartData('Fri', 14), _ChartData('Sat', 14)];
     _tooltip = TooltipBehavior(enable: true);
     super.initState();
   }
@@ -58,13 +51,12 @@ class _ChartBarState extends State<ChartBar> {
         backgroundColor: Colors.transparent,
         series: <ChartSeries<_ChartData, String>>[
           BarSeries<_ChartData, String>(
-            borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+            borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
             dataSource: data,
             xValueMapper: (_ChartData data, _) => data.x,
             yValueMapper: (_ChartData data, _) => data.y,
-            name: 'Gold',
-            color: Colors.purple,
+            name: '',
+            color: Colors.blue,
           )
         ]);
   }

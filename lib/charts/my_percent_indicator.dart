@@ -14,7 +14,7 @@ class MyPercentIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircularPercentIndicator(
-      radius: 47,
+      radius: MediaQuery.of(context).size.height * 0.075,
       lineWidth: 8,
       percent: percent / 100,
       animation: true,

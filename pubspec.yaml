@@ -46,6 +46,7 @@ dependencies:
   syncfusion_flutter_charts: ^20.2.49
   flutter_alarm_clock: ^0.0.2
   persistent_bottom_nav_bar: ^5.0.2
+  auto_size_text: ^3.0.0
 
 
 

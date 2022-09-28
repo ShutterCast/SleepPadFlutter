@@ -104,11 +104,11 @@ class JournalScreen extends StatelessWidget {
                         ),
                         SizedBox(height: MediaQuery.of(context).size.height * 0.04),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             CircularPercentIndicator(
-                              radius: 100,
+                              radius: MediaQuery.of(context).size.height * 0.145,
                               lineWidth: 12,
                               percent: 83 / 100,
                               animation: true,
@@ -122,7 +122,7 @@ class JournalScreen extends StatelessWidget {
                                 radius: 30,
                                 child: Text(
                                   "83 %",
-                                  style: TextStyle(fontSize: 24, color: Colors.white70, fontWeight: FontWeight.w300),
+                                  style: TextStyle(fontSize: 22, color: Colors.white70, fontWeight: FontWeight.w300),
                                 ),
                               ),
                             ),

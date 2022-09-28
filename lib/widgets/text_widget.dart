@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class MyText extends StatelessWidget {
@@ -30,7 +31,7 @@ class MyText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return AutoSizeText(
       maxLines: maxLines ?? 1,
       text,
       overflow: overflow,
