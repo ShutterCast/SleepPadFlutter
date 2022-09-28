@@ -11,16 +11,16 @@ class IndicatorWidget extends StatelessWidget {
         child: CircularPercentIndicator(
             radius: MediaQuery.of(context).size.height * 0.1,
             lineWidth: 5,
-            percent: 100 / 100,
+            percent: 95 / 100,
             animation: true,
             startAngle: 0,
-            animationDuration: 2500,
+            animationDuration: 3500,
             backgroundColor: Colors.white,
             progressColor: Colors.purple,
             circularStrokeCap: CircularStrokeCap.round,
             center: Container(
-              height: MediaQuery.of(context).size.height * 0.06,
-              width: MediaQuery.of(context).size.width * 0.14,
+              height: MediaQuery.of(context).size.height * 0.07,
+              width: MediaQuery.of(context).size.width * 0.15,
               child: Card(
                 elevation: 2,
                 color: Theme.of(context).scaffoldBackgroundColor,

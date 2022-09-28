@@ -108,7 +108,7 @@ class JournalScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             CircularPercentIndicator(
-                              radius: MediaQuery.of(context).size.height * 0.145,
+                              radius: MediaQuery.of(context).size.height * 0.14,
                               lineWidth: 12,
                               percent: 83 / 100,
                               animation: true,
