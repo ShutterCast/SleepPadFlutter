@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:sleep_pad/screens/explanation_screens/body_movement_screen.dart';
+import 'package:sleep_pad/screens/explanation_screens/heart_rate_screen.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
-class HeartRateScreen extends StatelessWidget {
-  const HeartRateScreen({Key? key}) : super(key: key);
+class RespirationScreen extends StatelessWidget {
+  const RespirationScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,47 +30,40 @@ class HeartRateScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               MyText(
-                text: "Heart Rate",
+                text: "Respiration Rate",
                 fontSize: 30,
                 fontWeight: FontWeight.w300,
               ),
               Column(
                 children: [
                   MyText(
-                    text: "A normal heart rate while sleeping is often between 40 to 60 beats per minute (bpm), though there is variability between individuals.",
+                    text: "The normal respiratory rate of an adult at rest3 is 12 to 20 times per minute. In one study, the average sleep respiratory rate rate for people without sleep apnea was 15 to 16 times a minute.",
                     fontSize: 15,
                     maxLines: 6,
                     letterSpacing: 0.6,
                     fontWeight: FontWeight.w300,
                   ),
                   MyText(
-                    text: "In general, heart rate is slower during sleep than when a person is awake.",
+                    text: "Our respiratory rate at rest changes as we grow older4. A range of 12 to 28 breaths per minute is normal for adults between 65 and 80 years old. while a range of 10 to 30 is normal in those over 80 years old.",
                     fontSize: 15,
-                    maxLines: 3,
-                    letterSpacing: 0.6,
-                    fontWeight: FontWeight.w300,
-                  ),
-                  MyText(
-                    text: "In the first stages of light sleep, heart rate begins to slow. During deep sleep, the heart rate reaches its lowest levels. In rapid eye movement (REM) sleep, heart rate may speed up to a heart rate similar to when you are awake.",
-                    fontSize: 15,
-                    maxLines: 7,
+                    maxLines: 6,
                     letterSpacing: 0.6,
                     fontWeight: FontWeight.w300,
                   ),
                   MyText(
                     text:
-                        "Sleep problems can have negative impacts on your heart and cardiovascular health, increasing your heart rate and contributing to higher blood pressure. Disorders such as sleep apnea, periodic limb movements, or shift work disorder that interfere with sleep have been linked to a higher chance of developing cardiovascular disease.",
+                        "A person's respiratory rate is the number of breaths they take per minute. Like body temperature and heart rate, respiratory rate is a vital sign that can offer a window into a person's overall health. This is true of both your waking and sleeping respiratory rates, as breathing significantly faster or slower than normal while you sleep can be due to a health condition.",
                     fontSize: 15,
                     maxLines: 10,
                     letterSpacing: 0.6,
                     fontWeight: FontWeight.w300,
-                  )
+                  ),
                 ],
               ),
               CircularPercentIndicator(
                 radius: MediaQuery.of(context).size.height * 0.18,
                 lineWidth: 10,
-                percent: 72 / 100,
+                percent: 91 / 100,
                 animation: true,
                 startAngle: 0,
                 animationDuration: 2500,
@@ -78,7 +71,7 @@ class HeartRateScreen extends StatelessWidget {
                 progressColor: Colors.purple,
                 circularStrokeCap: CircularStrokeCap.round,
                 center: MyText(
-                  text: "72 BPM",
+                  text: "14 BPM",
                   fontSize: 18,
                   color: Colors.white70,
                   fontWeight: FontWeight.w300,
@@ -89,7 +82,7 @@ class HeartRateScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => BodyMovementScreen(),
+                      builder: (context) => HeartRateScreen(),
                     ),
                   );
                 },

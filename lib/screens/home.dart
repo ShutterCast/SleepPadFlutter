@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_alarm_clock/flutter_alarm_clock.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:sleep_pad/screens/explanation_screens/respiration_rate_screen.dart';
 import 'package:sleep_pad/screens/start_tracking.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
@@ -19,20 +19,36 @@ class HomeScreen extends StatelessWidget {
           text: "Home",
           fontSize: 20,
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context, rootNavigator: true).push(
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return const RespirationScreen();
+                  },
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.info_outline,
+            ),
+          ),
+        ],
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Stack(alignment: Alignment.topRight, children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(top: 8.0, right: 8.0),
             child: Column(
               children: [
-                MyPercentIndicator(
+                const MyPercentIndicator(
                   title: "",
                   percent: 75,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top:8.0),
+                  padding: const EdgeInsets.only(top: 8.0),
                   child: MyText(
                     text: "Battery",
                     fontSize: 12,
@@ -75,36 +91,53 @@ class HomeScreen extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     color: Colors.purple,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  Column(
                     children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          MyButton(
+                            onPressed: () {
+                              FlutterAlarmClock.showAlarms();
+                            },
+                            title: "SETUP AN ALARM",
+                            color: Colors.amber,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                            roundSize: 0,
+                          ),
+                          MyButton(
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const StartTrackingScreen()));
+                              // Navigator.of(context, rootNavigator: false).push(MaterialPageRoute(builder: (context) => StartTrackingScreen(), maintainState: false));
+                            },
+                            title: "START MONITORING",
+                            color: Colors.amber,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                            roundSize: 0,
+                          )
+                        ],
+                      ),
                       MyButton(
                         onPressed: () {
-                          FlutterAlarmClock.showAlarms();
+                          Navigator.of(context, rootNavigator: true).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                return const RespirationScreen();
+                              },
+                            ),
+                          );
                         },
-                        title: "SETUP AN ALARM",
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        title: "INFO",
                         color: Colors.amber,
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
                         roundSize: 0,
                       ),
-                      MyButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const StartTrackingScreen()));
-                          // Navigator.of(context, rootNavigator: false).push(MaterialPageRoute(builder: (context) => StartTrackingScreen(), maintainState: false));
-                        },
-                        title: "START MONITORING",
-                        color: Colors.amber,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        roundSize: 0,
-                      )
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
