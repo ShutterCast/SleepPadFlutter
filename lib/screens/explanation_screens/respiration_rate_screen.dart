@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:sleep_pad/screens/explanation_screens/heart_rate_screen.dart';
-import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
 class RespirationScreen extends StatelessWidget {
@@ -77,22 +75,22 @@ class RespirationScreen extends StatelessWidget {
                   fontWeight: FontWeight.w300,
                 ),
               ),
-              MyButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HeartRateScreen(),
-                    ),
-                  );
-                },
-                title: "Next",
-                color: Colors.purple,
-                roundSize: 0,
-                width: MediaQuery.of(context).size.width * 0.5,
-                fontSize: 16,
-                fontWeight: FontWeight.w300,
-              )
+              // MyButton(
+              //   onPressed: () {
+              //     Navigator.push(
+              //       context,
+              //       MaterialPageRoute(
+              //         builder: (context) => HeartRateScreen(),
+              //       ),
+              //     );
+              //   },
+              //   title: "Next",
+              //   color: Colors.purple,
+              //   roundSize: 0,
+              //   width: MediaQuery.of(context).size.width * 0.5,
+              //   fontSize: 16,
+              //   fontWeight: FontWeight.w300,
+              // )
             ],
           ),
         ),

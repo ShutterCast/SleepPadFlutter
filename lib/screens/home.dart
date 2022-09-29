@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_alarm_clock/flutter_alarm_clock.dart';
-import 'package:sleep_pad/screens/explanation_screens/respiration_rate_screen.dart';
 import 'package:sleep_pad/screens/start_tracking.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
@@ -19,22 +18,22 @@ class HomeScreen extends StatelessWidget {
           text: "Home",
           fontSize: 20,
         ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.of(context, rootNavigator: true).push(
-                MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return const RespirationScreen();
-                  },
-                ),
-              );
-            },
-            icon: const Icon(
-              Icons.info_outline,
-            ),
-          ),
-        ],
+        // actions: [
+        //   IconButton(
+        //     onPressed: () {
+        //       Navigator.of(context, rootNavigator: true).push(
+        //         MaterialPageRoute(
+        //           builder: (BuildContext context) {
+        //             return const RespirationScreen();
+        //           },
+        //         ),
+        //       );
+        //     },
+        //     icon: const Icon(
+        //       Icons.info_outline,
+        //     ),
+        //   ),
+        // ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -119,23 +118,23 @@ class HomeScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      MyButton(
-                        onPressed: () {
-                          Navigator.of(context, rootNavigator: true).push(
-                            MaterialPageRoute(
-                              builder: (BuildContext context) {
-                                return const RespirationScreen();
-                              },
-                            ),
-                          );
-                        },
-                        width: MediaQuery.of(context).size.width * 0.4,
-                        title: "INFO",
-                        color: Colors.amber,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        roundSize: 0,
-                      ),
+                      // MyButton(
+                      //   onPressed: () {
+                      //     Navigator.of(context, rootNavigator: true).push(
+                      //       MaterialPageRoute(
+                      //         builder: (BuildContext context) {
+                      //           return const RespirationScreen();
+                      //         },
+                      //       ),
+                      //     );
+                      //   },
+                      //   width: MediaQuery.of(context).size.width * 0.4,
+                      //   title: "INFO",
+                      //   color: Colors.amber,
+                      //   fontWeight: FontWeight.w400,
+                      //   fontSize: 14,
+                      //   roundSize: 0,
+                      // ),
                     ],
                   ),
                 ],

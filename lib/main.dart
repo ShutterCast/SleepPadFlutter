@@ -2,9 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sleep_pad/screens/explanation_screens/sleep_score_screen.dart';
-import 'package:sleep_pad/screens/newNavBar.dart';
 import 'package:sleep_pad/screens/splash_screen.dart';
+import 'package:sleep_pad/screens/splash_screen_home.dart';
 
 import 'Utils.dart';
 import 'firebase_options.dart';
@@ -46,7 +45,7 @@ class MyApp extends StatelessWidget {
           } else if (snapshot.hasError) {
             return const Center(child: Text('Something Went Wrong'));
           } else if (snapshot.hasData) {
-            return NewBar();
+            return SplashScreenHome();
           } else {
             return SplashScreen();
           }

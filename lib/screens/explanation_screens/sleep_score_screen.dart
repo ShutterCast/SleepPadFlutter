@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
-import '../../widgets/my_button.dart';
 import '../../widgets/text_widget.dart';
 
 class SleepScoreScreen extends StatelessWidget {
@@ -30,26 +29,47 @@ class SleepScoreScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               MyText(
-                text: "Respiration Rate",
+                text: "Sleep Score",
                 fontSize: 30,
                 fontWeight: FontWeight.w300,
               ),
               Column(
                 children: [
                   MyText(
-                    text: "Your Sleep Score is based on the amount of time you sleep and the average time you spend in each sleep cycle. This is then compared to the Benchmark",
+                    text: "Your Sleep Score is dependent upon several factors. ",
                     fontSize: 15,
-                    maxLines: 5,
+                    maxLines: 2,
                     letterSpacing: 0.6,
                     fontWeight: FontWeight.w300,
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.04,
+                    height: MediaQuery.of(context).size.height * 0.02,
                   ),
                   MyText(
-                    text: "Knowing how much time youspend in each sleep stage can help you understand your energy levels andfluctuations during the day.",
-                    fontSize: 15,
-                    maxLines: 4,
+                    text:
+                        "Our unique algorithm takes into consideration: \n• The amount of time you spend sleeping \n• The amount of time you spend in each sleep cycle \n• The regularity of your sleep (timings) \n• Your movements while sleeping \n• Your respiratory rate while sleeping \n• Your heart rate while sleeping",
+                    fontSize: 13,
+                    maxLines: 10,
+                    letterSpacing: 0.6,
+                    fontWeight: FontWeight.w300,
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.015,
+                  ),
+                  MyText(
+                    text: "Based on all this information, our algorithm calculates your Sleep Score.",
+                    fontSize: 14,
+                    maxLines: 2,
+                    letterSpacing: 0.6,
+                    fontWeight: FontWeight.w300,
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.015,
+                  ),
+                  MyText(
+                    text: "* The more you will use the SLEEP PAD, the more accurate your Sleep Score will be.",
+                    fontSize: 13,
+                    maxLines: 3,
                     letterSpacing: 0.6,
                     fontWeight: FontWeight.w300,
                   ),
@@ -72,15 +92,15 @@ class SleepScoreScreen extends StatelessWidget {
                   fontWeight: FontWeight.w300,
                 ),
               ),
-              MyButton(
-                onPressed: () {},
-                title: "End Demo",
-                color: Colors.purple,
-                roundSize: 0,
-                width: MediaQuery.of(context).size.width * 0.5,
-                fontSize: 16,
-                fontWeight: FontWeight.w300,
-              )
+              // MyButton(
+              //   onPressed: () {},
+              //   title: "End Demo",
+              //   color: Colors.purple,
+              //   roundSize: 0,
+              //   width: MediaQuery.of(context).size.width * 0.5,
+              //   fontSize: 16,
+              //   fontWeight: FontWeight.w300,
+              // )
             ],
           ),
         ),

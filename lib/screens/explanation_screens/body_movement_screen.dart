@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:sleep_pad/screens/explanation_screens/sleep_score_screen.dart';
 
-import '../../widgets/my_button.dart';
 import '../../widgets/text_widget.dart';
 
 class BodyMovementScreen extends StatelessWidget {
@@ -74,22 +72,22 @@ class BodyMovementScreen extends StatelessWidget {
                   fontWeight: FontWeight.w300,
                 ),
               ),
-              MyButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SleepScoreScreen(),
-                    ),
-                  );
-                },
-                title: "Next",
-                color: Colors.purple,
-                roundSize: 0,
-                width: MediaQuery.of(context).size.width * 0.5,
-                fontSize: 16,
-                fontWeight: FontWeight.w300,
-              )
+              // MyButton(
+              //   onPressed: () {
+              //     Navigator.push(
+              //       context,
+              //       MaterialPageRoute(
+              //         builder: (context) => SleepScoreScreen(),
+              //       ),
+              //     );
+              //   },
+              //   title: "Next",
+              //   color: Colors.purple,
+              //   roundSize: 0,
+              //   width: MediaQuery.of(context).size.width * 0.5,
+              //   fontSize: 16,
+              //   fontWeight: FontWeight.w300,
+              // )
             ],
           ),
         ),

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:sleep_pad/charts/my_percent_indicator.dart';
 import 'package:sleep_pad/charts/stepper%20chart.dart';
+import 'package:sleep_pad/screens/explanation_screens/heart_rate_screen.dart';
+import 'package:sleep_pad/screens/explanation_screens/respiration_rate_screen.dart';
+import 'package:sleep_pad/screens/explanation_screens/sleep_score_screen.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
 import 'color_box_with_title.dart';
@@ -107,22 +110,33 @@ class JournalScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            CircularPercentIndicator(
-                              radius: MediaQuery.of(context).size.height * 0.14,
-                              lineWidth: 12,
-                              percent: 83 / 100,
-                              animation: true,
-                              startAngle: 0,
-                              animationDuration: 2500,
-                              backgroundColor: Colors.white,
-                              progressColor: Colors.purple,
-                              circularStrokeCap: CircularStrokeCap.round,
-                              center: const CircleAvatar(
-                                backgroundColor: Colors.transparent,
-                                radius: 30,
-                                child: Text(
-                                  "83 %",
-                                  style: TextStyle(fontSize: 22, color: Colors.white70, fontWeight: FontWeight.w300),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context, rootNavigator: true).push(
+                                  MaterialPageRoute(
+                                    builder: (BuildContext context) {
+                                      return const SleepScoreScreen();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: CircularPercentIndicator(
+                                radius: MediaQuery.of(context).size.height * 0.14,
+                                lineWidth: 12,
+                                percent: 83 / 100,
+                                animation: true,
+                                startAngle: 0,
+                                animationDuration: 2500,
+                                backgroundColor: Colors.white,
+                                progressColor: Colors.purple,
+                                circularStrokeCap: CircularStrokeCap.round,
+                                center: const CircleAvatar(
+                                  backgroundColor: Colors.transparent,
+                                  radius: 30,
+                                  child: Text(
+                                    "83 %",
+                                    style: TextStyle(fontSize: 22, color: Colors.white70, fontWeight: FontWeight.w300),
+                                  ),
                                 ),
                               ),
                             ),
@@ -194,42 +208,53 @@ class JournalScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Image.asset(
-                                "assets/heart-beat.png",
-                                color: Colors.white70,
-                                height: MediaQuery.of(context).size.height * 0.05,
-                                width: MediaQuery.of(context).size.height * 0.05,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.02,
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  MyText(
-                                    text: "65 BPM",
-                                    fontSize: 20,
-                                    color: Colors.white70,
-                                    fontWeight: FontWeight.w300,
-                                  ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  MyText(
-                                    text: "Heart Rate >",
-                                    fontSize: 14,
-                                    color: Colors.white70,
-                                    fontWeight: FontWeight.w300,
-                                  )
-                                ],
-                              )
-                            ],
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context, rootNavigator: true).push(
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) {
+                                    return const HeartRateScreen();
+                                  },
+                                ),
+                              );
+                            },
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Image.asset(
+                                  "assets/heart-beat.png",
+                                  color: Colors.white70,
+                                  height: MediaQuery.of(context).size.height * 0.05,
+                                  width: MediaQuery.of(context).size.height * 0.05,
+                                  fit: BoxFit.cover,
+                                ),
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.02,
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    MyText(
+                                      text: "65 BPM",
+                                      fontSize: 20,
+                                      color: Colors.white70,
+                                      fontWeight: FontWeight.w300,
+                                    ),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                    MyText(
+                                      text: "Heart Rate >",
+                                      fontSize: 14,
+                                      color: Colors.white70,
+                                      fontWeight: FontWeight.w300,
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.01,
@@ -277,41 +302,52 @@ class JournalScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Image.asset(
-                                "assets/respiratory-system.png",
-                                color: Colors.white70,
-                                height: MediaQuery.of(context).size.height * 0.05,
-                                width: MediaQuery.of(context).size.height * 0.05,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.02,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  MyText(
-                                    text: "14 BPM",
-                                    fontSize: 20,
-                                    color: Colors.white70,
-                                    fontWeight: FontWeight.w300,
-                                  ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  MyText(
-                                    text: "Respiration Rate >",
-                                    fontSize: 14,
-                                    color: Colors.white70,
-                                    fontWeight: FontWeight.w300,
-                                  )
-                                ],
-                              )
-                            ],
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context, rootNavigator: true).push(
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) {
+                                    return const RespirationScreen();
+                                  },
+                                ),
+                              );
+                            },
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Image.asset(
+                                  "assets/respiratory-system.png",
+                                  color: Colors.white70,
+                                  height: MediaQuery.of(context).size.height * 0.05,
+                                  width: MediaQuery.of(context).size.height * 0.05,
+                                  fit: BoxFit.cover,
+                                ),
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.02,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    MyText(
+                                      text: "14 BPM",
+                                      fontSize: 20,
+                                      color: Colors.white70,
+                                      fontWeight: FontWeight.w300,
+                                    ),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                    MyText(
+                                      text: "Respiration Rate >",
+                                      fontSize: 14,
+                                      color: Colors.white70,
+                                      fontWeight: FontWeight.w300,
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.01,
