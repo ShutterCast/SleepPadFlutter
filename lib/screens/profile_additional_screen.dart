@@ -127,7 +127,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     );
                   } else {
-                    Utils.showSnackBar(color: false, text: "Fill the Details");
+                    Utils.showSnackBar("Fill in the Details", Colors.red);
                   }
                 },
                 title: "Continue",

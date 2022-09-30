@@ -41,7 +41,7 @@ class _SignInScreenState extends State<SignInScreen> {
               isLoading = false;
             });
 
-            Utils.showSnackBar(color: false, text: "Error ${ex.message}");
+            Utils.showSnackBar("Error ${ex.message}", Colors.red);
           },
           codeSent: (verificationId, resendToken) {
             setState(() {
@@ -62,13 +62,13 @@ class _SignInScreenState extends State<SignInScreen> {
             setState(() {
               isLoading = false;
             });
-            Utils.showSnackBar(color: false, text: "Timeout");
+            Utils.showSnackBar("TimeOut", Colors.red);
           },
           timeout: const Duration(seconds: 30));
 
       phoneNumberController.clear();
     } else {
-      Utils.showSnackBar(color: false, text: "Enter Correct Number");
+      Utils.showSnackBar("Enter Correct Number", Colors.red);
     }
   }
 
@@ -91,10 +91,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           maxLines: 1,
                           maxLength: 10,
                           textInputAction: TextInputAction.done,
-                          validator: (value) =>
-                              value != null && value.length < 10
-                                  ? 'Enter 10 digits'
-                                  : null,
+                          validator: (value) => value != null && value.length < 10 ? 'Enter 10 digits' : null,
                           textEditingController: phoneNumberController,
                           textInputType: TextInputType.phone,
                           hintText: 'Phone Number (+91)',
@@ -110,8 +107,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               if (phoneNumberController.text.trim() != "") {
                                 sendOTP();
                               } else {
-                                Utils.showSnackBar(
-                                    text: "Enter Phone Number", color: false);
+                                Utils.showSnackBar("Enter Phone Number", Colors.red);
                               }
                             },
                             title: "Continue",
@@ -136,15 +132,11 @@ class _SignInScreenState extends State<SignInScreen> {
                         children: const [
                           Text(
                             'By clicking on \'Continue\', I accept the ',
-                            style:
-                                TextStyle(color: Colors.black87, fontSize: 14),
+                            style: TextStyle(color: Colors.black87, fontSize: 14),
                           ),
                           Text(
                             'Terms',
-                            style: TextStyle(
-                                color: Colors.black87,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14),
+                            style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold, fontSize: 14),
                           ),
                         ],
                       ),
@@ -153,20 +145,15 @@ class _SignInScreenState extends State<SignInScreen> {
                         children: const [
                           Text(
                             'and Conditions',
-                            style:
-                                TextStyle(color: Colors.black87, fontSize: 14),
+                            style: TextStyle(color: Colors.black87, fontSize: 14),
                           ),
                           Text(
                             'and the',
-                            style:
-                                TextStyle(color: Colors.black87, fontSize: 14),
+                            style: TextStyle(color: Colors.black87, fontSize: 14),
                           ),
                           Text(
                             ' Privacy Policy',
-                            style: TextStyle(
-                                color: Colors.black87,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14),
+                            style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold, fontSize: 14),
                           ),
                         ],
                       )

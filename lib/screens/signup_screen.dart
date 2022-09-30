@@ -21,9 +21,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController phoneNumberController = TextEditingController();
 
   void sendOTP() async {
-    if (phoneNumberController.text.trim().length == 10 &&
-        firstNameController.text.trim() != "" &&
-        lastNameController.text.trim() != "") {
+    if (phoneNumberController.text.trim().length == 10 && firstNameController.text.trim() != "" && lastNameController.text.trim() != "") {
       String phone = "+91${phoneNumberController.text.trim()}";
 
       setState(() {
@@ -45,7 +43,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               isLoading = false;
             });
 
-            Utils.showSnackBar(color: false, text: "Error ${ex.message}");
+            Utils.showSnackBar("Error ${ex.message}", Colors.red);
             // Navigator.pushReplacement(
             //   context,
             //   MaterialPageRoute(
@@ -75,14 +73,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
             setState(() {
               isLoading = false;
             });
-            Utils.showSnackBar(color: false, text: "Timeout");
+            Utils.showSnackBar("Timeout", Colors.red);
           },
           timeout: const Duration(seconds: 60));
       phoneNumberController.clear();
       firstNameController.clear();
       lastNameController.clear();
     } else {
-      Utils.showSnackBar(color: false, text: "Fill all Fields");
+      Utils.showSnackBar("Fill all Fields", Colors.red);
     }
   }
 
@@ -103,8 +101,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     children: [
                       CustomTextField(
                         maxLines: 1,
-                        validator: (value) =>
-                            value == "" ? "Please enter Your First Name" : "",
+                        validator: (value) => value == "" ? "Please enter Your First Name" : "",
                         textEditingController: firstNameController,
                         textInputAction: TextInputAction.done,
                         textInputType: TextInputType.name,
@@ -113,8 +110,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       CustomTextField(
                         maxLines: 1,
                         textInputAction: TextInputAction.done,
-                        validator: (value) =>
-                            value == "" ? "Please enter Your Last Name" : "",
+                        validator: (value) => value == "" ? "Please enter Your Last Name" : "",
                         textEditingController: lastNameController,
                         textInputType: TextInputType.name,
                         hintText: 'Last Name',
@@ -123,9 +119,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         maxLines: 1,
                         maxLength: 10,
                         textInputAction: TextInputAction.done,
-                        validator: (value) => value != null && value.length < 10
-                            ? 'Enter 10 digits'
-                            : null,
+                        validator: (value) => value != null && value.length < 10 ? 'Enter 10 digits' : null,
                         textEditingController: phoneNumberController,
                         textInputType: TextInputType.phone,
                         hintText: 'Phone Number (+91)',
@@ -156,15 +150,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         children: const [
                           Text(
                             'By clicking on \'Continue\', I accept the ',
-                            style:
-                                TextStyle(color: Colors.black87, fontSize: 14),
+                            style: TextStyle(color: Colors.black87, fontSize: 14),
                           ),
                           Text(
                             'Terms',
-                            style: TextStyle(
-                                color: Colors.black87,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14),
+                            style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold, fontSize: 14),
                           ),
                         ],
                       ),
@@ -173,20 +163,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         children: const [
                           Text(
                             'and Conditions',
-                            style:
-                                TextStyle(color: Colors.black87, fontSize: 14),
+                            style: TextStyle(color: Colors.black87, fontSize: 14),
                           ),
                           Text(
                             'and the',
-                            style:
-                                TextStyle(color: Colors.black87, fontSize: 14),
+                            style: TextStyle(color: Colors.black87, fontSize: 14),
                           ),
                           Text(
                             ' Privacy Policy',
-                            style: TextStyle(
-                                color: Colors.black87,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14),
+                            style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold, fontSize: 14),
                           ),
                         ],
                       )

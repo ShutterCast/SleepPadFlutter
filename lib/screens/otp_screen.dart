@@ -19,14 +19,7 @@ class OtpScreen extends StatefulWidget {
   final String? phoneNumber;
   final String? verificationId;
   String? imageUrl;
-  OtpScreen(
-      {Key? key,
-      this.verificationId,
-      this.phoneNumber,
-      this.firstName,
-      this.lastName,
-      this.isSignUp})
-      : super(key: key);
+  OtpScreen({Key? key, this.verificationId, this.phoneNumber, this.firstName, this.lastName, this.isSignUp}) : super(key: key);
 
   @override
   State<OtpScreen> createState() => _OtpScreenState();
@@ -43,19 +36,14 @@ class _OtpScreenState extends State<OtpScreen> {
         builder: (context) => const Center(
               child: CircularProgressIndicator(),
             ));
-    PhoneAuthCredential credential = PhoneAuthProvider.credential(
-        verificationId: widget.verificationId!, smsCode: smsCode);
-    await FirebaseAuth.instance
-        .signInWithCredential(credential)
-        .onError((error, stackTrace) => errorThrown(error!))
-        .whenComplete(
+    PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: widget.verificationId!, smsCode: smsCode);
+    await FirebaseAuth.instance.signInWithCredential(credential).onError((error, stackTrace) => errorThrown(error!)).whenComplete(
           () => {
             if (FirebaseAuth.instance.currentUser != null)
               {
                 if (widget.isSignUp!)
                   {
-                    FirebaseAuth.instance.currentUser!.updateDisplayName(
-                        widget.firstName! + widget.lastName!),
+                    FirebaseAuth.instance.currentUser!.updateDisplayName(widget.firstName! + widget.lastName!),
                     Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
@@ -65,11 +53,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   }
                 else
                   {
-                    Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const IntroScreen1()),
-                        (route) => false),
+                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const IntroScreen1()), (route) => false),
                   }
               }
             else
@@ -155,10 +139,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   },
                   child: const Text(
                     "Resend OTP?",
-                    style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
+                    style: TextStyle(decoration: TextDecoration.underline, fontWeight: FontWeight.bold, fontSize: 16),
                   ),
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.1),
@@ -182,6 +163,6 @@ class _OtpScreenState extends State<OtpScreen> {
 
   errorThrown(Object error) {
     log(error.toString());
-    Utils.showSnackBar(text: "Invalid OTP", color: false);
+    Utils.showSnackBar("Invalid OTP", Colors.red);
   }
 }

@@ -31,23 +31,19 @@ class _SnakeButtonState extends State<SnakeButton> with SingleTickerProviderStat
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(0),
-          child: CustomPaint(
-            painter: SnakePainter(animation: _controller),
-            child: Padding(
-              padding: const EdgeInsets.all(5),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  "assets/indicator_image.png",
-                  fit: BoxFit.cover,
-                  height: 100,
-                  width: 100,
-                ),
-              ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(0),
+      child: CustomPaint(
+        painter: SnakePainter(animation: _controller),
+        child: Padding(
+          padding: const EdgeInsets.all(5),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image.asset(
+              "assets/indicator_image.png",
+              fit: BoxFit.cover,
+              height: MediaQuery.of(context).size.height * 0.1,
+              width: MediaQuery.of(context).size.height * 0.1,
             ),
           ),
         ),

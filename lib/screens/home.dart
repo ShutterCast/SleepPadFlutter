@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_alarm_clock/flutter_alarm_clock.dart';
 import 'package:sleep_pad/screens/start_tracking.dart';
+import 'package:sleep_pad/widgets/indicator_widget.dart';
 import 'package:sleep_pad/widgets/my_button.dart';
 import 'package:sleep_pad/widgets/text_widget.dart';
 
-import '../charts/my_percent_indicator.dart';
+import '../Utils.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -40,23 +41,25 @@ class HomeScreen extends StatelessWidget {
         child: Stack(alignment: Alignment.topRight, children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(top: 8.0, right: 8.0),
-            child: Column(
-              children: [
-                const MyPercentIndicator(
-                  title: "",
-                  percent: 75,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: MyText(
-                    text: "Battery",
-                    fontSize: 12,
-                    letterSpacing: 1,
-                    color: Colors.purple,
-                    fontWeight: FontWeight.bold,
+            child: InkWell(
+              onTap: () {
+                Utils.showSnackBar("Battery is 65%", Colors.amber);
+              },
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  IndicatorWidget(),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 15),
+                    child: MyText(
+                      text: "65%",
+                      color: Color(0xFF582174),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           Center(
