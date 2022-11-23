@@ -20,7 +20,8 @@ class _IntroScreen2State extends State<IntroScreen2> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 10, right: 10, bottom: 0, top: 20),
+          padding:
+              const EdgeInsets.only(left: 10, right: 10, bottom: 0, top: 20),
           child: SizedBox(
             height: MediaQuery.of(context).size.height * 0.95,
             child: Center(
@@ -29,7 +30,8 @@ class _IntroScreen2State extends State<IntroScreen2> {
                 children: [
                   MyText(
                     textAlign: TextAlign.center,
-                    text: "We welcome you to the SLEEP PAD \nCommunity, where comfort meets \n technology ",
+                    text:
+                        "We welcome you to the SLEEP PAD \nCommunity, where comfort meets \n technology ",
                     color: Colors.purple,
                     maxLines: 4,
                     fontWeight: FontWeight.bold,
@@ -49,7 +51,7 @@ class _IntroScreen2State extends State<IntroScreen2> {
                           MyButton(
                             onPressed: () async {
                               if (await canLaunchUrl(url)) {
-                                await launchUrl(url, mode: LaunchMode.externalApplication);
+                                await launchUrl(url);
                               } else {
                                 throw "Could not launch $url";
                               }
@@ -64,7 +66,11 @@ class _IntroScreen2State extends State<IntroScreen2> {
                           ),
                           MyButton(
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => VideoPlayerScreen()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          VideoPlayerScreen()));
                             },
                             title: "Watch Video",
                             color: Colors.indigo,
